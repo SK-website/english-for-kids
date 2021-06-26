@@ -1,0 +1,88 @@
+[
+  {
+    "category": "unsorted",
+    "images": [
+      "eagle.jpg",
+      "elephant.jpg",
+      "lion.jpg",
+      "tiger.jpg",
+      "wolf.jpg",
+      "bird.jpg",
+      "penguin.jpg",
+      "bird2.jpg",
+      "bird3.jpg",
+      "chameleon.jpg",
+      "chicken.jpg",
+      "cow.jpg",
+      "deer.jpg",
+      "dog.jpg",
+      "fox.jpg",
+      "keng.jpg",
+      "lion2.jpg",
+      "meerkat.jpg",
+      "panda.jpg",
+      "pig.jpg",
+      "rabbit.jpg",
+      "sheep.jpg",
+      "squirel.jpg"
+    ]
+  },
+  {
+    "category": "icons",
+    "images": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"]
+  },
+  {
+    "category": "plants",
+    "images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png",
+      "9.png",
+      "10.png",
+      "11.png",
+      "12.png",
+      "13.png",
+      "14.png",
+      "15.png",
+      "16.png",
+      "17.png",
+      "18.png"
+    ]
+  },
+  {
+    "category": "cakes",
+    "images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png",
+      "9.png",
+      "10.png",
+      "11.png",
+      "12.png",
+      "13.png",
+      "14.png",
+      "15.png",
+      "16.png",
+      "17.png",
+      "18.png",
+      "19.png",
+      "20.png",
+      "21.png",
+      "22.png",
+      "21.png",
+      "23.png",
+      "24.png",
+      "25.png"
+    ]
+  }
+]
