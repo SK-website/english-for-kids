@@ -1,88 +1,119 @@
 [
   {
-    "category": "unsorted",
+    "category": "fairytales",
     "images": [
-      "eagle.jpg",
-      "elephant.jpg",
-      "lion.jpg",
-      "tiger.jpg",
-      "wolf.jpg",
-      "bird.jpg",
-      "penguin.jpg",
-      "bird2.jpg",
-      "bird3.jpg",
-      "chameleon.jpg",
-      "chicken.jpg",
-      "cow.jpg",
-      "deer.jpg",
-      "dog.jpg",
-      "fox.jpg",
-      "keng.jpg",
-      "lion2.jpg",
-      "meerkat.jpg",
-      "panda.jpg",
-      "pig.jpg",
-      "rabbit.jpg",
-      "sheep.jpg",
-      "squirel.jpg"
+      "fairytales1-gian.jpg",
+      "fairytale7-princess.png",
+      "fairytales9-king.jpg",
+      "fairytales3-witch.png",
+      "fairytales4-castle.png",
+      "fairytales5-dragon.png",
+      "fairytales6-mermaid.png",
+      "fairytales8-gnome.jpg"
     ]
   },
   {
-    "category": "icons",
-    "images": ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"]
-  },
-  {
-    "category": "plants",
+    "category": "animals1",
     "images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png",
-      "9.png",
-      "10.png",
-      "11.png",
-      "12.png",
-      "13.png",
-      "14.png",
-      "15.png",
-      "16.png",
-      "17.png",
-      "18.png"
+      "animals1-sheep.svg",
+      "animals2-tiger.svg",
+      "animals3-sheep.svg",
+      "animals4-bear.svg",
+      "animals5-bird.svg",
+      "animals6-monkey.svg",
+      "animals7-rebbit.svg",
+      "animals8-lama.svg"
     ]
   },
   {
-    "category": "cakes",
+    "category": "animals2",
     "images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png",
-      "9.png",
-      "10.png",
-      "11.png",
-      "12.png",
-      "13.png",
-      "14.png",
-      "15.png",
-      "16.png",
-      "17.png",
-      "18.png",
-      "19.png",
-      "20.png",
-      "21.png",
-      "22.png",
-      "21.png",
-      "23.png",
-      "24.png",
-      "25.png"
+      "animals10-elephant.svg",
+      "animals11-croco.svg",
+      "animals11-fox.svg",
+      "animals12-rhinoceros.svg",
+      "animals13-moose1.png",
+      "animals14-butterfly.svg",
+      "animals15-pingiun.svg",
+      "animals16-leopard.svg"
+    ]
+  },
+  {
+    "category": "animals3",
+    "images": [
+      "animals17-walrus.svg",
+      "animals18-dolphin.svg",
+      "animals19-owl.svg",
+      "animals20-dog.svg",
+      "animals28-panda.png",
+      "animals24-goldfish.svg",
+      "animals25-pig.svg",
+      "animals26-snake.svg"
+    ]
+  },
+  {
+    "category": "food1",
+    "images": [
+      "food1-bread.svg",
+      "food2-orange.svg",
+      "food3-pear.svg",
+      "food4-salad.svg",
+      "food5-sandwich.svg",
+      "food6-banan.svg",
+      "food7-fries.svg",
+      "food8-pasta.svg"
+    ]
+  },
+  {
+    "category": "food2",
+    "images": [
+      "food10-soup.svg",
+      "food11-donut.svg",
+      "food19-cake.svg",
+      "food13-pizza.svg",
+      "food14-egg.svg",
+      "food20-noodles.svg",
+      "food23-ice-cream.svg",
+      "food28-pancake.svg"
+    ]
+  },
+  {
+    "category": "sports",
+    "images": [
+      "sports1-bicycle.svg",
+      "sports2-skates.svg",
+      "sports4-bit.svg",
+      "sports6-racket.svg",
+      "sports7-skate.svg",
+      "sports8-cup.svg",
+      "sports5-ball.svg",
+      "sports3-rollers.svg"
+    ]
+  },
+  {
+    "category": "actions",
+    "images": [
+      "actions10-draw.png",
+      "actions1-jump.svg",
+      "actions2-throw.svg",
+      "actions3-run.svg",
+      "actions4-relax.jpg",
+      "actions6-play.png",
+      "actions7-walk.svg",
+      "actions11-pull.png"
+    ]
+  },
+  {
+    "category": "emotionss",
+    "images": [
+      "emotions-love.svg",
+      "actions1-jump.svg",
+      "actions2-throw.svg",
+      "actions3-run.svg",
+      "actions4-relax.jpg",
+      "actions6-play.png",
+      "actions7-walk.svg",
+      "actions11-pull.png"
     ]
   }
 ]

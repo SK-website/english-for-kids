@@ -1,0 +1,131 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  right: -1000px;
+  width: 40%;
+  height: 100%;
+  -webkit-transition: right 1s ease-in-out;
+  transition: right 1s ease-in-out;
+  overflow: auto;
+  background: #ffd747;
+}
+
+.close-btn {
+  width: 30px;
+  height: 30px;
+  border-color: transparent;
+  background: url("../../assets/icons/close-red30.png") no-repeat;
+  -webkit-transition: -webkit-transform ease-in-out 0.3s;
+  transition: -webkit-transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s;
+  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.active-menu {
+  top: 94px;
+  pointer-events: all;
+  -webkit-transition: right 1s;
+  transition: right 1s;
+}
+
+.navbar-list {
+  margin-top: 10%;
+  margin-left: 20%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  color: #443444;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.navbar-list-item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: left;
+  line-height: 50px;
+  vertical-align: top;
+  z-index: 100;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.navbar-list-item:hover {
+  color: #f33346;
+  text-decoration: underline;
+}
+
+.current-page-item {
+  color: #838888;
+  text-decoration: underline;
+  pointer-events: none;
+}
+
+.navbar-icon {
+  display: inline-block;
+  width: 60px;
+  height: 50px;
+  background-size: contain;
+}
+
+.pig {
+  background: url("../../assets/icons/pig48.png") no-repeat;
+}
+
+.whale {
+  background: url("../../assets/icons/whale48.png") no-repeat;
+}
+
+.bug {
+  background: url("../../assets/icons/bug48.png") no-repeat;
+}
+
+.food1 {
+  background: url("../../assets/icons/milk48.png") no-repeat;
+}
+
+.food2 {
+  background: url("../../assets/icons/food5.png") no-repeat;
+}
+
+.emotions {
+  background: url("../../assets/icons/tom48.png") no-repeat;
+}
+
+.actions {
+  background: url("../../assets/icons/sports.png") no-repeat;
+}
+
+.fairytales {
+  background: url("../../assets/icons/castel48.png") no-repeat;
+}
+
+.main-page-icon {
+  background: url("../../assets/icons/frog48.png") no-repeat;
+}
+/*# sourceMappingURL=navbar.css.map */
