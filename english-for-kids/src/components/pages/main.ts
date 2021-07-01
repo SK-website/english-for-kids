@@ -17,14 +17,14 @@ export class MainPage extends BaseComponent {
   constructor() {
     super('div', ['categories']);
     const cardsField = new BaseComponent('div', ['cards-field']);
-    this.actionsCategory = new Category('actions', './assets/actions/actions5-drive.svg', cardsField.element);
-    this.animals1Category = new Category('animals 1', '../assets/animals/animals-all1.svg', cardsField.element);
-    this.animals2Category = new Category('animals 2', './../assets/animals/animals-all2.svg', cardsField.element);
-    this.animals3Category = new Category('animals 3', '../../assets/animals/animals-all3.svg', cardsField.element);
-    this.emotionsCategory = new Category('emotions', 'assets/emotions/emotions-all1.svg', cardsField.element);
-    this.fairytalesCategory = new Category('fairytales', './assets/fairytales/fairytailes-all.png', cardsField.element);
-    this.food1Category = new Category('food 1', './assets/food/food-all3.png', cardsField.element);
-    this.food2Category = new Category('food 2', './assets/food/food-all4.svg', cardsField.element);
+    this.actionsCategory = new Category('actions', './actions/actions5-drive.svg', cardsField.element);
+    this.animals1Category = new Category('animals 1', './animals/leopard-1456554_640.png', cardsField.element);
+    this.animals2Category = new Category('animals 2', './animals/animals-all5.png', cardsField.element);
+    this.animals3Category = new Category('animals 3', './animals/animals-all6.png', cardsField.element);
+    this.emotionsCategory = new Category('emotions', './emotions/emotions-all1.svg', cardsField.element);
+    this.fairytalesCategory = new Category('fairytales', './fairytale/fairytales-all.png', cardsField.element);
+    this.food1Category = new Category('food 1', './food/food-all3.png', cardsField.element);
+    this.food2Category = new Category('food 2', './food/food-all4.svg', cardsField.element);
 
     this.element.appendChild(cardsField.element);
   }

@@ -23,8 +23,8 @@ export class App {
 
   start(): void {
     if (this.mainElement) {
-      this.mainElement.innerHTML = '';
-      this.mainElement.appendChild(this.mainPage.element);
+      // this.mainElement.innerHTML = '';
+      // this.mainElement.appendChild(this.mainPage.element);
     }
   }
 }

@@ -1,4 +1,5 @@
 import './category.scss'
+import '../../styles.scss';
 import { BaseComponent } from "../base-component"
 
 export class Category extends BaseComponent {
@@ -9,7 +10,7 @@ export class Category extends BaseComponent {
     const card = new BaseComponent('div', ['card']);
     const cardFront = new BaseComponent('div', ['card-front']);
     const categoryPicture = new BaseComponent('div', ['img-card']);
-    categoryPicture.element.style.backgroundImage = `url("${url}")`;
+    categoryPicture.element.style.backgroundImage = `url(${url})`;
     const categoryInfo = new BaseComponent('div', ['info-block', 'category-info-block']);
     const spelling = new BaseComponent('div', ['spelling']);
     spelling.element.textContent = name;

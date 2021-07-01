@@ -1,19 +1,1 @@
-.navbar-list-item {
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-bottom: 10px;
-  width: 100%;
-  text-align: left;
-  line-height: 50px;
-  vertical-align: top;
-  z-index: 100;
-  transition: all ease-in-out 0.3s;
-  cursor: pointer;
 
-  &:hover {
-    color: #f33346;
-    text-decoration: underline;
-  }
-}
