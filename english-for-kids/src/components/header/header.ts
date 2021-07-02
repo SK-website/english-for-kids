@@ -31,9 +31,8 @@ export class Header extends BaseComponent {
     const line2 = new BaseComponent('div', ['menu-line']);
     const line3 = new BaseComponent('div', ['menu-line']);
 
-
-    this.playButtonInput.appendChild(this.playButtonName.element);
     label.element.appendChild(this.playButtonInput);
+    label.element.appendChild(this.playButtonName.element);
     this.playButton.element.appendChild(label.element);
 
     menuContainer.element.appendChild(line1.element);

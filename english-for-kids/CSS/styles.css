@@ -87,20 +87,6 @@ h1 {
           align-items: flex-end;
 }
 
-.results {
-  margin: 0 auto;
-  padding-top: 1%;
-  width: 75%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  height: 26px;
-  overflow: hidden;
-}
-
 .right-img-result {
   background: url("./assets/icons/heart-yel26.png");
   width: 26px;
@@ -111,141 +97,6 @@ h1 {
   background: url("./assets/icons/heart-white26.png");
   width: 26px;
   height: 26px;
-}
-
-.menu-wrapper {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
-  border: 3px solid #f33346;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #ffffff;
-  -webkit-transition: -webkit-transform ease-in-out 0.7s;
-  transition: -webkit-transform ease-in-out 0.7s;
-  transition: transform ease-in-out 0.7s;
-  transition: transform ease-in-out 0.7s, -webkit-transform ease-in-out 0.7s;
-}
-
-.menu-wrapper:hover {
-  -webkit-transform: rotate(720deg) scale(1.2);
-          transform: rotate(720deg) scale(1.2);
-  background-color: #ffd747;
-  color: #8ceeee;
-}
-
-.menu {
-  border-color: #f33346;
-  -webkit-transition: -webkit-transform ease-in-out 0.7s;
-  transition: -webkit-transform ease-in-out 0.7s;
-  transition: transform ease-in-out 0.7s;
-  transition: transform ease-in-out 0.7s, -webkit-transform ease-in-out 0.7s;
-  cursor: pointer;
-}
-
-.menu:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  background-color: #ffd747;
-}
-
-.menu-line {
-  margin: 0 auto;
-  width: 1.8rem;
-  height: 0.3rem;
-  border-bottom: #f33346 solid 4px;
-}
-
-.play-switch-btn {
-  z-index: 1;
-  position: relative;
-  width: 6.9rem;
-  height: 2rem;
-  border-radius: 190px;
-}
-
-.play-switch {
-  position: relative;
-  display: inline-block;
-  width: 7rem;
-  height: 2.1rem;
-}
-
-.play-switch-box {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.play-switch-slider {
-  position: absolute;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding-left: 40px;
-  line-height: 2.1rem;
-  background-color: #ffffff;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 190px;
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.none {
-  display: none;
-}
-
-.play-switch-slider:before {
-  position: absolute;
-  content: "";
-  height: 1.9rem;
-  width: 1.9rem;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
-  top: 2px;
-  border-radius: 50%;
-  background-color: #f33346;
-  -webkit-box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
-          box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.play-switch-box:checked + .play-switch-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding-left: 15px;
-  line-height: 2.1rem;
-  background-color: #ffd747;
-  color: #ffffff;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 190px;
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.play-switch-box:checked + .play-switch-slider:before {
-  -webkit-transform: translateX(4.9rem);
-  transform: translateX(4.9rem);
-  background-color: #f33346;
 }
 
 .cards-field {
@@ -342,7 +193,8 @@ h1 {
           transform: rotateY(180deg);
 }
 
-.card-front {
+.card-front,
+.card-back {
   width: 100%;
   height: 100%;
 }
@@ -353,7 +205,8 @@ h1 {
   margin-bottom: 10px;
   width: 90%;
   height: 70%;
-  background: url("./assets/fairytale/fairytales6-mermaid.png") no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
 }
 
@@ -370,7 +223,7 @@ h1 {
   pointer-events: none;
 }
 
-.flip-button {
+.flipp-button {
   width: 30px;
   height: 30px;
   background: url("./assets/icons/arrow-green.png") no-repeat;
@@ -381,7 +234,7 @@ h1 {
   transition: transform ease-in-out 0.4s, -webkit-transform ease-in-out 0.4s;
 }
 
-.flip-button:hover {
+.flipp-button:hover {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
 }
@@ -467,8 +320,8 @@ h1 {
 
 .res {
   margin: 0 auto;
-  width: 70%;
-  height: 100vh;
+  width: 700px;
+  height: 700px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -478,6 +331,9 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 50%;
+  border-color: brown;
+  background-color: #ffffff;
 }
 
 .img-res {
@@ -493,6 +349,8 @@ h1 {
 
 .no {
   background: url("./assets/res/coala-no.svg") no-repeat center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 /*# sourceMappingURL=styles.css.map */

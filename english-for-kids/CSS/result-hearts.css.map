@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACN,MAAM,EAAE,MAAM;EACd,WAAW,EAAE,EAAE;EACf,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,QAAQ;EACzB,QAAQ,EAAE,MAAM;CACjB",
+    "sources": [
+        "../src/components/result-hearts/result-hearts.scss"
+    ],
+    "names": [],
+    "file": "result-hearts.css"
+}

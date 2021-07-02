@@ -1,0 +1,14 @@
+.result {
+  margin: 0 auto;
+  padding-top: 1%;
+  width: 75%;
+  height: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  overflow: hidden;
+}
+/*# sourceMappingURL=result-hearts.css.map */
