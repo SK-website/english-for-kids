@@ -1,72 +1,232 @@
 [
   {
     "category": "fairytales",
-    "images": [
-      "fairytales1-gian.jpg",
-      "fairytale7-princess.png",
-      "fairytales9-king.jpg",
-      "fairytales3-witch.png",
-      "fairytales4-castle.png",
-      "fairytales5-dragon.png",
-      "fairytales6-mermaid.png",
-      "fairytales8-gnome.jpg"
+    "info": [
+      {
+        "img": "fairytales1-gian.jpg",
+        "spelling_eng": "genie",
+        "spelling_rus": "джинн",
+        "audio": "genie-gb.mp3"
+      },
+      {
+        "img": "fairytale7-princess.png",
+        "spelling_eng": "princess",
+        "spelling_rus": "принцесса",
+        "audio": "princess-gb.mp3"
+      },
+      {
+        "img": "fairytales9-king.jpg",
+        "spelling_eng": "king",
+        "spelling_rus": "король",
+        "audio": "king-gb.mp3"
+      },
+      {
+        "img": "fairytales3-witch.png",
+        "spelling_eng": "witch",
+        "spelling_rus": "ведьма",
+        "audio": "witch-gb.mp3"
+      },
+      {
+        "img": "fairytales4-castle.png",
+        "spelling_eng": "castle",
+        "spelling_rus": "замок",
+        "audio": "castle-gb.mp3"
+      },
+      {
+        "img": "fairytales5-dragon.png",
+        "spelling_eng": "dragon",
+        "spelling_rus": "дракон",
+        "audio": "dragon-gb.mp3"
+      },
+      {
+        "img": "fairytales6-mermaid.png",
+        "spelling_eng": "mermaid",
+        "spelling_rus": "русалка",
+        "audio": "mermaid-gb.mp3"
+      },
+      {
+        "img": "fairytales8-gnome.jpg",
+        "spelling_eng": "gnome",
+        "spelling_rus": "гном",
+        "audio": "gnome-gb.mp3"
+      }
     ]
   },
   {
     "category": "animals1",
-    "images": [
-      "animals1-sheep.svg",
-      "animals2-tiger.svg",
-      "animals3-sheep.svg",
-      "animals4-bear.svg",
-      "animals5-bird.svg",
-      "animals6-monkey.svg",
-      "animals7-rebbit.svg",
-      "animals8-lama.svg"
+    "info": [
+      {
+        "img": "animals1-sheep.svg",
+        "spelling_eng": "sheep",
+        "spelling_rus": "овца",
+        "audio": "sheep-us.mp3"
+      },
+      {
+        "img": "animals2-tiger.svg",
+        "spelling_eng": "tiger",
+        "spelling_rus": "тигр",
+        "audio": "tiger-gb.mp3"
+      },
+      {
+        "img": "animals3-lion.svg",
+        "spelling_eng": "lion",
+        "spelling_rus": "лев",
+        "audio": "lion-gb.mp3"
+      },
+      {
+        "img": "animals4-bear.svg",
+        "spelling_eng": "bear",
+        "spelling_rus": "медведь",
+        "audio": "bear-us.mp3"
+      },
+      {
+        "img": "animals5-bird.svg",
+        "spelling_eng": "bird",
+        "spelling_rus": "птица",
+        "audio": "bird-gb.mp3"
+      },
+      {
+        "img": "animals6-monkey.svg",
+        "spelling_eng": "monkey",
+        "spelling_rus": "обезьяна",
+        "audio": "monkey-gb.mp3"
+      },
+      {
+        "img": "animals7-rabbit.svg",
+        "spelling_eng": "rabbit",
+        "spelling_rus": "кролик",
+        "audio": "rabbit-gb.mp3"
+      },
+      {
+        "img": "animals8-lama.svg",
+        "spelling_eng": "lama",
+        "spelling_rus": "лама",
+        "audio": "lama-gb.mp3"
+      }
     ]
   },
   {
     "category": "animals2",
-    "images": [
-      "animals10-elephant.svg",
-      "animals11-croco.svg",
-      "animals11-fox.svg",
-      "animals12-rhinoceros.svg",
-      "animals13-moose1.png",
-      "animals14-butterfly.svg",
-      "animals15-pingiun.svg",
-      "animals16-leopard.svg"
+    "info": [
+      {
+        "img": "animals10-elephant.svg",
+        "spelling_eng": "elephant",
+        "spelling_rus": "слон",
+        "audio": "elephant-gb.mp3"
+      },
+      {
+        "img": "animals11-croco.svg",
+        "spelling_eng": "crocodile",
+        "spelling_rus": "крокодил",
+        "audio": "crocodile-gb.mp3"
+      },
+      {
+        "img": "animals11-fox.svg",
+        "spelling_eng": "fox",
+        "spelling_rus": "лиса",
+        "audio": "fox-gb.mp3"
+      },
+      {
+        "img": "animals12-rhinoceros.svg",
+        "spelling_eng": "rhinoceros",
+        "spelling_rus": "носорог",
+        "audio": "rhinoceros-gb.mp3"
+      },
+      {
+        "img": "animals13-moose1.png",
+        "spelling_eng": "moose",
+        "spelling_rus": "лось",
+        "audio": "moose-gb.mp3"
+      },
+      {
+        "img": "animals14-butterfly.svg",
+        "spelling_eng": "butterfly",
+        "spelling_rus": "бабочка",
+        "audio": "butterfly-gb.mp3"
+      },
+      {
+        "img": "animals15-penguin.png",
+        "spelling_eng": "pengiun",
+        "spelling_rus": "пингвин",
+        "audio": "penguin-gb.mp3"
+      },
+      {
+        "img": "animals16-leopard.svg",
+        "spelling_eng": "leopard",
+        "spelling_rus": "пингвин",
+        "audio": "leopard-gb.mp3"
+      }
     ]
   },
   {
     "category": "animals3",
-    "images": [
-      "animals17-walrus.svg",
-      "animals18-dolphin.svg",
-      "animals19-owl.svg",
-      "animals20-dog.svg",
-      "animals28-panda.png",
-      "animals24-goldfish.svg",
-      "animals25-pig.svg",
-      "animals26-snake.svg"
+    "info": [
+      {
+        "img": "animals17-walrus.svg",
+        "spelling_eng": "walrus",
+        "spelling_rus": "морж",
+        "audio": "walrus-gb.mp3"
+      },
+      {
+        "img": "animals18-dolphin.svg",
+        "spelling_eng": "dolphin",
+        "spelling_rus": "дельфин",
+        "audio": "dolphin-gb.mp3"
+      },
+      {
+        "img": "animals19-owl.svg",
+        "spelling_eng": "owl",
+        "spelling_rus": "сова",
+        "audio": "owl-us.mp3"
+      },
+      {
+        "img": "animals20-dog.svg",
+        "spelling_eng": "dog",
+        "spelling_rus": "собака",
+        "audio": "dog-gb.mp3"
+      },
+      {
+        "img": "animals28-panda.png",
+        "spelling_eng": "panda",
+        "spelling_rus": "панда",
+        "audio": "panda-gb.mp3"
+      },
+      {
+        "img": "animals24-goldfish.svg",
+        "spelling_eng": "goldfish",
+        "spelling_rus": "золотая рыбка",
+        "audio": "goldfish-gb.mp3"
+      },
+      {
+        "img": "animals25-pig.svg",
+        "spelling_eng": "pig",
+        "spelling_rus": "свинья",
+        "audio": "pig-us.mp3"
+      },
+      {
+        "img": "animals27-horse.svg",
+        "spelling_eng": "horse",
+        "spelling_rus": "лошадь",
+        "audio": "horse-gb.mp3"
+      }
     ]
   },
   {
     "category": "food1",
-    "images": [
+    "info": [
       "food1-bread.svg",
       "food2-orange.svg",
       "food3-pear.svg",
       "food4-salad.svg",
       "food5-sandwich.svg",
       "food6-banan.svg",
-      "food7-fries.svg",
+      "food7-сhips.svg",
       "food8-pasta.svg"
     ]
   },
   {
     "category": "food2",
-    "images": [
+    "info": [
       "food10-soup.svg",
       "food11-donut.svg",
       "food19-cake.svg",
@@ -79,20 +239,20 @@
   },
   {
     "category": "sports",
-    "images": [
+    "info": [
       "sports1-bicycle.svg",
       "sports2-skates.svg",
-      "sports4-bit.svg",
+      "sports4-bat.svg",
       "sports6-racket.svg",
       "sports7-skate.svg",
       "sports8-cup.svg",
       "sports5-ball.svg",
-      "sports3-rollers.svg"
+      "sports9-mitt.svg"
     ]
   },
   {
     "category": "actions",
-    "images": [
+    "info": [
       "actions10-draw.png",
       "actions1-jump.svg",
       "actions2-throw.svg",
@@ -105,7 +265,7 @@
   },
   {
     "category": "emotionss",
-    "images": [
+    "info": [
       "emotions-love.svg",
       "actions1-jump.svg",
       "actions2-throw.svg",

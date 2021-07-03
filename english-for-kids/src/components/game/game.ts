@@ -1,4 +1,5 @@
-
+import { CardInfo, ImageCategoryModel } from '../../models/image-category-model';
+import '../../styles.scss';
 import { BaseComponent } from '../base-component';
 import { Card } from '../card/card';
 import { CardsField } from '../cards-field/cards-field';
@@ -21,12 +22,12 @@ export class Game extends BaseComponent {
     this.element.appendChild(this.cardsField.element);
   }
 
-  newGame(images: string[]) {
+  newGame(categoryData: ImageCategoryModel): void {
     console.log('new game started');
     this.cardsField.clear();
-    console.log(images);
-    const cards = images
-      .map((url) => new Card(url))
+    console.log(categoryData);
+    const cards = categoryData.info
+      .map((cardInfo) => new Card(categoryData.category, cardInfo))
       .sort(() => Math.random() - 0.5);
 
     // cards.forEach((card) => {

@@ -363,10 +363,11 @@ h1 {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   }
 
-  &.flipped > .card {
-    transform: rotateY(180deg) translateX(-100%);
-    transform-origin: left;
-  }
+  // &.flipped > .card {
+  //   transform: rotateY(180deg) translateX(-100%);
+  //   transform-origin: left;
+  //   backface-visibility: hidden;
+  // }
 }
 .card {
   position: relative;
@@ -376,42 +377,70 @@ h1 {
   box-shadow: 0 0.1rem 0.25rem black;
   transform-style: preserve-3d;
   transform-origin: right;
-  transition: all 0.5s;
-  background-color: #ffffff;
+  transition: all 3s;
+  perspective: 2000px;
 
-  &__front,
-  &__back {
+  .card-front,
+  .card-back {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
     backface-visibility: hidden;
-    border-radius: inherit;
+    transition: all 0.5s;
   }
 
-  &__front {
-    width: 100%;
-    height: 100%;
-    background-color: crimson;
-    background: no-repeat center;
-    background-size: cover;
-    background-image: url("./assets/fairytale/fairytales3-witch.png");
-  }
-  &__back {
-    // display: none;
-    background-color: darkblue;
-    background-image: url("./assets/3.png");
-    background-position: center;
-    background-size: contain;
-    // transform-style: preserve-3d;
+  .card-back {
     transform: rotateY(180deg);
   }
+
+  &.flipped .card-front {
+    // transform: rotateY(180deg) translateX(-100%);
+    transform: rotateY(180deg);
+    // transform-origin: center;
+    backface-visibility: hidden;
+  }
+  &.flipped .card-back {
+    transform: rotateY(360deg);
+    // transform-origin: left;
+  }
+  // &.flipped > .card-back {
+  //   transform: rotateY(360deg);
+  //   // transform-origin: left;
+  // }
+
+  // &__front,
+  // &__back {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   backface-visibility: hidden;
+  //   border-radius: inherit;
+  // }
+
+  // &__front {
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: crimson;
+  //   background: no-repeat center;
+  //   background-size: cover;
+  //   background-image: url("./assets/fairytale/fairytales3-witch.png");
+  // }
+  // &__back {
+  //   // display: none;
+  //   background-color: darkblue;
+  //   background-image: url("./assets/3.png");
+  //   background-position: center;
+  //   background-size: contain;
+  //   transform-style: preserve-3d;
+  //   transform: rotateY(180deg);
+  // }
 }
-.card-front,
-.card-back {
-  width: 100%;
-  height: 100%;
+.hidden {
+  display: none;
 }
 
 .img-card {
@@ -423,6 +452,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  background-image: url("./assets/animals/animals16-leopard.svg");
 }
 .play {
   height: 90%;
@@ -443,7 +473,16 @@ h1 {
   &:hover {
     transform: rotate(360deg);
   }
+  &:active > .card {
+    transform: rotateY(180deg) translateX(-100%);
+    transform-origin: left;
+  }
+  &:active + .card {
+    transform: rotateY(180deg) translateX(-100%);
+    transform-origin: left;
+  }
 }
+
 // .info {
 //   border-top: 1px solid #c3c9c9;
 // }

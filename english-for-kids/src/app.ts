@@ -4,7 +4,7 @@ import { Header } from "./components/header/header";
 import { Navbar } from "./components/navbar/navbar";
 import { MainPage } from "./components/pages/main";
 import { Game } from "./components/game/game";
-import { ImageCategoryModel } from "./models/image-category-model";
+import { CardInfo, ImageCategoryModel } from "./models/image-category-model";
 
 
 export class App {
@@ -28,15 +28,16 @@ export class App {
   async start(): Promise<void> {
     if (this.mainElement) {
       this.mainElement.innerHTML = '';
-      this.mainElement.appendChild(this.mainPage.element);
+      // this.mainElement.appendChild(this.mainPage.element);
       this.mainElement.appendChild(this.game.element);
 
       const res = await fetch('./images.json');
       const categories: ImageCategoryModel[] = await res.json();
       console.log(categories);
-      const cat = categories[0];
-      const images = cat.images.map((name: string) => `${cat.category}/${name}`);
-      this.game.newGame(images);
+      const categoryData = categories[1];
+      console.log(categoryData);
+
+      this.game.newGame(categoryData);
     }
   }
 }
