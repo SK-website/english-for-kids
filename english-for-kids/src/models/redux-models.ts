@@ -4,3 +4,14 @@ export interface Action {
 }
 
 
+export interface InitState {
+  showMenu: boolean
+}
+export interface CurrentCategory {
+  currentCategory: string
+}
+
+export interface State {
+  showMenu: boolean;
+  currentCategory: string
+}

@@ -25,8 +25,8 @@ export class MainPage extends BaseComponent {
     this.animals3Category = new Category('animals (set 3)', './animals/animals-all6.png', cardsField.element);
     this.emotionsCategory = new Category('emotions', './emotions/emotions-all1.svg', cardsField.element);
     this.fairytalesCategory = new Category('fairytales', './fairytales/fairytales-all.png', cardsField.element);
-    this.food1Category = new Category('food (set 1)', './food/food-all3.png', cardsField.element);
-    this.food2Category = new Category('food (set 2)', './food/food-all4.svg', cardsField.element);
+    this.food1Category = new Category('food (set 1)', './food2/food-all3.png', cardsField.element);
+    this.food2Category = new Category('food (set 2)', './food2/food-all4.svg', cardsField.element);
     this.resultHearts = new ResultHearts();
     this.element.appendChild(this.resultHearts.container.element);
     this.element.appendChild(cardsField.element);

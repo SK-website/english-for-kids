@@ -3,6 +3,7 @@ import { BaseComponent } from "../base-component";
 import store from '../../redux/store';
 import { showMenu } from '../../redux/actionsCreators';
 import { Navbar } from '../navbar/navbar';
+import { InitState } from '../../models/redux-models';
 
 
 
@@ -64,7 +65,9 @@ export class Header extends BaseComponent {
     })
     store.subscribe(() => {
       const state = store.getState();
-      const show = state.showMenu;
+      const show: InitState = state.showMenu;
+      console.log(show);
+      console.log(show.showMenu);
 
       show.showMenu
         ? this.navbar.element.classList.add('navbar-show')
@@ -73,4 +76,3 @@ export class Header extends BaseComponent {
     })
   }
 }
-

@@ -5,6 +5,7 @@ import { BaseComponent } from "../base-component"
 export class Category extends BaseComponent {
 
 
+
   constructor(name: string, url: string, container: HTMLElement) {
     super('div', ['card-container']);
     const card = new BaseComponent('div', ['card']);
@@ -22,4 +23,6 @@ export class Category extends BaseComponent {
     this.element.appendChild(card.element);
     container.appendChild(this.element);
   }
+
+
 }
