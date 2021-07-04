@@ -1,0 +1,7 @@
+export const INCREMENT = 'INCREMENT';
+export const CHOOSE_CATEGORY = "CHOOSE_CATEGORY";
+export const DISABLE_BUTTONS = 'DISABLE_BUTTONS';
+export const ENABLE_BUTTONS = 'ENABLE_BUTTONS';
+
+export const SHOW_MENU = 'SHOW_MENU';
+

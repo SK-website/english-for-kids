@@ -1,5 +1,8 @@
 import './header.scss';
 import { BaseComponent } from "../base-component";
+import store from '../../redux/store';
+import { showMenu } from '../../redux/actionsCreators';
+import { Navbar } from '../navbar/navbar';
 
 
 
@@ -9,11 +12,13 @@ export class Header extends BaseComponent {
   public playButtonName: BaseComponent;
   public menu: BaseComponent;
   public playButton: BaseComponent;
+  public navbar: Navbar;
 
 
   constructor() {
     super();
     this.header = new BaseComponent('nav', ['nav']);
+    this.navbar = new Navbar();
 
     // switch-button
     this.playButton = new BaseComponent("div", ['play-switch-btn']);
@@ -43,6 +48,29 @@ export class Header extends BaseComponent {
     this.header.element.appendChild(this.playButton.element);
     this.header.element.appendChild(this.menu.element);
     this.element.appendChild(this.header.element);
+    this.element.appendChild(this.navbar.element);
+
+    this.menu.element.addEventListener('click', () => {
+      const newPosition = this.navbar.element.classList.contains("navbar-show")
+        ? false
+        : true
+
+      store.dispatch(showMenu(newPosition));
+      console.log(store.getState())
+    })
+
+    this.navbar.closeMenuButton.element.addEventListener('click', () => {
+      store.dispatch(showMenu(false));
+    })
+    store.subscribe(() => {
+      const state = store.getState();
+      const show = state.showMenu;
+
+      show.showMenu
+        ? this.navbar.element.classList.add('navbar-show')
+        : this.navbar.element.classList.remove('navbar-show')
+
+    })
   }
 }
 
