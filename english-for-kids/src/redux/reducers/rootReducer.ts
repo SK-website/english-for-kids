@@ -6,7 +6,6 @@ import { initialCurrentCategoryState, initialMenuState } from '../initialState';
 function showMenuReducer(state = initialMenuState, action: Action) {
   switch (action.type) {
     case SHOW_MENU:
-      console.log({ ...state })
       return { ...state, showMenu: action.payload };
     default: return state;
   }

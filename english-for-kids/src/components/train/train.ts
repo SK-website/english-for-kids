@@ -23,7 +23,6 @@ export class Train extends BaseComponent {
     const cards = categoryData.info
       .map((cardInfo) => new Card(categoryData.category, cardInfo))
       .sort(() => Math.random() - 0.5);
-
     this.cardsField.addCards(cards);
   }
 }

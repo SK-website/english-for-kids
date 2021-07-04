@@ -66,8 +66,6 @@ export class Header extends BaseComponent {
     store.subscribe(() => {
       const state = store.getState();
       const show: InitState = state.showMenu;
-      console.log(show);
-      console.log(show.showMenu);
 
       show.showMenu
         ? this.navbar.element.classList.add('navbar-show')

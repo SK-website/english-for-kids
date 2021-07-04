@@ -8,6 +8,7 @@ import { CardInfo, ImageCategoryModel } from "./models/image-category-model";
 import { getCategoriesCardsInfo } from "./api/api";
 import store from "./redux/store";
 import { Train } from "./components/train/train";
+import { CategoryLink } from "./components/category-link/category-link";
 
 
 export class App {
@@ -17,7 +18,8 @@ export class App {
   private mainPage: MainPage;
   private navbar: Navbar;
   private game: Game;
-  private train: Train
+  private train: Train;
+
 
   constructor() {
     this.mainPage = new MainPage();
@@ -29,44 +31,51 @@ export class App {
     this.mainElement?.insertAdjacentElement('beforebegin', this.navbar.element);
     this.mainElement?.insertAdjacentElement('beforebegin', this.header.element);
 
-    store.subscribe(() => {
-      this.startTrain();
-    })
+
+    this.navbar.onCategoryLinkClick = (category): void => {
+      console.log('клик сработал');
+      this.startTrain(category);
+    }
+
+    // store.subscribe(() => {
+    //   this.startTrain(store.getState().currentCategory);
+    // })
   }
 
-  async start(): Promise<void> {
+  start(): void {
     if (this.mainElement) {
       this.mainElement.innerHTML = '';
       this.mainElement.appendChild(this.mainPage.element);
     }
   }
 
-  startTrain() {
+  async startTrain(category: string) {
     console.log('startTrain works', store.getState().currentCategory)
     if (this.mainElement) {
       this.mainElement.innerHTML = '';
       this.mainElement.appendChild(this.train.element);
-      getCategoriesCardsInfo().then(result => result.find(el => el.category === store.getState().currentCategory)).then(res => {
-        console.log(res);
-        if (res) this.train.newTrain(res)
-      })
+      const categories = await getCategoriesCardsInfo();
+      const cat = categories.find(el => el.category === category);
+      console.log(cat);
+      if (cat) this.train.newTrain(cat);
     }
-
-
-    // if (categoryData) this.train.newTrain(categoryData)
-
-
-    // console.log('categoryData   -   ', categoryData)
-    // const categoryData: ImageCategoryModel | undefined = categories.find(cat => cat.category === store.getState().currentCategory);
-
-
-    // const res = await fetch('./images.json');
-    // const categories: ImageCategoryModel[] = await res.json();
-    // console.log(categories);
-    // const categoryData = categories[1];
-    // console.log(categoryData);
-    // if (categoryData) this.game.newGame(categoryData);
   }
 
+
+  // if (categoryData) this.train.newTrain(categoryData)
+
+
+  // console.log('categoryData   -   ', categoryData)
+  // const categoryData: ImageCategoryModel | undefined = categories.find(cat => cat.category === store.getState().currentCategory);
+
+
+  // const res = await fetch('./images.json');
+  // const categories: ImageCategoryModel[] = await res.json();
+  // console.log(categories);
+  // const categoryData = categories[1];
+  // console.log(categoryData);
+  // if (categoryData) this.game.newGame(categoryData);
 }
+
+
 

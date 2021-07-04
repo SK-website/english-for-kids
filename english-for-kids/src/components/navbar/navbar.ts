@@ -1,6 +1,8 @@
 import './navbar.scss'
 import { BaseComponent } from "../base-component";
 import { CategoryLink } from "../category-link/category-link";
+import store from '../../redux/store';
+import { chooseCategory, showMenu } from '../../redux/actionsCreators';
 
 export class Navbar {
   public element: HTMLElement;
@@ -15,7 +17,8 @@ export class Navbar {
   public food1Link: CategoryLink;
   public food2Link: CategoryLink;
 
-  public allCategoryLinks: HTMLElement[] = []
+  public allCategoryLinks: CategoryLink[] = []
+  public onCategoryLinkClick: ((category: string) => void) | null = null;
 
   constructor() {
 
@@ -37,7 +40,13 @@ export class Navbar {
     this.food2Link = new CategoryLink('li', ['navbar-list-item'], 'food2', 'span', ['navbar-icon', 'food2'], linksList);
     this.element.appendChild(this.closeMenuButton.element);
     this.element.appendChild(linksList);
-    this.allCategoryLinks.push(this.mainPageLink.element, this.actionsLink.element, this.animals1Link.element, this.animals2Link.element, this.animals3Link.element, this.emotionsLink.element, this.fairytalesLink.element, this.food1Link.element, this.food2Link.element);
-    console.log(this.allCategoryLinks)
+    this.allCategoryLinks.push(this.mainPageLink, this.actionsLink, this.animals1Link, this.animals2Link, this.animals3Link, this.emotionsLink, this.fairytalesLink, this.food1Link, this.food2Link);
+
+
+    this.allCategoryLinks.forEach((el) => el.element.addEventListener('click', () => {
+      store.dispatch(showMenu(false));
+      // store.dispatch(chooseCategory(el.linkCategory));
+      this.onCategoryLinkClick?.(el.linkCategory);
+    }))
   }
 }

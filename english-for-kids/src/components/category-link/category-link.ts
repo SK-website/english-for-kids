@@ -5,11 +5,13 @@ import { BaseComponent } from "../base-component";
 
 export class CategoryLink {
   public element: HTMLElement;
+  public linkCategory: string;
 
-  public onCategoryLinkClick: (() => void) | null = null;
+
 
   constructor(tag: keyof HTMLElementTagNameMap = 'li', styles: string[] = ['navbar-list-item'], text: string,
     tag2: keyof HTMLElementTagNameMap = 'span', tag2styles: string[] = [], container: HTMLUListElement) {
+    this.linkCategory = text;
     this.element = document.createElement(tag);
     this.element.classList.add(...styles);
     this.element.textContent = text;
@@ -17,12 +19,5 @@ export class CategoryLink {
     this.element.insertAdjacentElement('afterbegin', picture.element);
     container.appendChild(this.element);
 
-
-    this.element.addEventListener('click', () => {
-      store.dispatch(showMenu(false));
-      store.dispatch(chooseCategory(text));
-      this.onCategoryLinkClick?.();
-
-    })
   }
 }
