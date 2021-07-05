@@ -1,14 +1,16 @@
 import './category.scss'
 import '../../styles.scss';
 import { BaseComponent } from "../base-component"
+import store from '../../redux/store';
+import { chooseCategory, setActiveCategory, showMenu } from '../../redux/actionsCreators';
 
 export class Category extends BaseComponent {
-
-
-
-  constructor(name: string, url: string, container: HTMLElement) {
+  public linkCategory: string;
+  constructor(categoryName: string, name: string, url: string, container: HTMLElement) {
     super('div', ['card-container']);
+    this.linkCategory = categoryName;
     const card = new BaseComponent('div', ['card']);
+    card.element.setAttribute('data-category', categoryName);
     const cardFront = new BaseComponent('div', ['card-front']);
     const categoryPicture = new BaseComponent('div', ['img-card']);
     categoryPicture.element.style.backgroundImage = `url(${url})`;
@@ -22,7 +24,12 @@ export class Category extends BaseComponent {
     card.element.appendChild(cardFront.element);
     this.element.appendChild(card.element);
     container.appendChild(this.element);
+
+    this.element.addEventListener('click', () => {
+      store.dispatch(showMenu(false));
+      store.dispatch(chooseCategory(categoryName));
+      store.dispatch(setActiveCategory(categoryName))
+    })
+
   }
-
-
 }

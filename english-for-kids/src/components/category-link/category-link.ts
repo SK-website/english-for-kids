@@ -9,13 +9,13 @@ export class CategoryLink {
 
 
 
-  constructor(tag: keyof HTMLElementTagNameMap = 'li', styles: string[] = ['navbar-list-item'], text: string,
-    tag2: keyof HTMLElementTagNameMap = 'span', tag2styles: string[] = [], container: HTMLUListElement) {
-    this.linkCategory = text;
-    this.element = document.createElement(tag);
-    this.element.classList.add(...styles);
+  constructor(categoryName: string, text: string, pictureStyles: string[] = [], container: HTMLUListElement) {
+    this.linkCategory = categoryName;
+    this.element = document.createElement('li');
+    this.element.classList.add('navbar-list-item');
+    this.element.setAttribute('data-category', categoryName);
     this.element.textContent = text;
-    const picture = new BaseComponent(tag2, tag2styles);
+    const picture = new BaseComponent('span', pictureStyles);
     this.element.insertAdjacentElement('afterbegin', picture.element);
     container.appendChild(this.element);
 

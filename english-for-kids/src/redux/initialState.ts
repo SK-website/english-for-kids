@@ -1,8 +1,14 @@
+import { ACTIVE_CATEGORY } from "./actionTypes"
+
 export const initialMenuState = {
   showMenu: false,
-  currentCategory: ''
+  // currentCategory: ''
 }
 export const initialCurrentCategoryState = {
-  currentCategory: ''
+  currentCategory: '',
+  activeCategory: ''
 }
 
+export const initialModeState = {
+  playMode: false
+}

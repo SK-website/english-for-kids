@@ -1,7 +1,7 @@
 import './header.scss';
 import { BaseComponent } from "../base-component";
 import store from '../../redux/store';
-import { showMenu } from '../../redux/actionsCreators';
+import { showMenu, toPlayMode, toTrainMode } from '../../redux/actionsCreators';
 import { Navbar } from '../navbar/navbar';
 import { InitState } from '../../models/redux-models';
 
@@ -57,12 +57,23 @@ export class Header extends BaseComponent {
         : true
 
       store.dispatch(showMenu(newPosition));
-      console.log(store.getState())
     })
 
     this.navbar.closeMenuButton.element.addEventListener('click', () => {
       store.dispatch(showMenu(false));
     })
+
+    this.playButtonInput.addEventListener('change', (ev: Event) => {
+      ev.stopPropagation();
+      if (this.playButtonInput.checked) {
+        this.playButtonName.element.textContent = "play";
+        store.dispatch(toPlayMode())
+      } else if (!this.playButtonInput.checked) {
+        store.dispatch(toTrainMode());
+        this.playButtonName.element.textContent = "train";
+      }
+    })
+
     store.subscribe(() => {
       const state = store.getState();
       const show: InitState = state.showMenu;
@@ -70,7 +81,6 @@ export class Header extends BaseComponent {
       show.showMenu
         ? this.navbar.element.classList.add('navbar-show')
         : this.navbar.element.classList.remove('navbar-show')
-
     })
   }
 }

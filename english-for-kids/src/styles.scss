@@ -30,7 +30,7 @@
 }
 html {
   font-family: Quicksand, sans-serif;
-  font-size: 20 px;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
@@ -55,6 +55,7 @@ img {
 }
 
 body {
+  min-height: 100%;
   padding: 1.8rem 1.8rem 6rem 1.8rem;
   font-family: Quicksand, sans-serif;
   color: #f33346;
@@ -362,12 +363,6 @@ h1 {
     transform: translateZ(0.5rem);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   }
-
-  // &.flipped > .card {
-  //   transform: rotateY(180deg) translateX(-100%);
-  //   transform-origin: left;
-  //   backface-visibility: hidden;
-  // }
 }
 .card {
   position: relative;
@@ -377,7 +372,8 @@ h1 {
   box-shadow: 0 0.1rem 0.25rem black;
   transform-style: preserve-3d;
   transform-origin: right;
-  transition: all 3s;
+  // transition: all 1s;
+  transition: transform 1s;
   perspective: 2000px;
 
   .card-front,
@@ -388,7 +384,7 @@ h1 {
     background-color: #ffffff;
     border-radius: 0.5rem;
     backface-visibility: hidden;
-    transition: all 0.5s;
+    transition: all 0.7s;
   }
 
   .card-back {
@@ -568,4 +564,10 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media screen and (max-width: 420px) {
+  html {
+    font-size: 14px;
+  }
 }
