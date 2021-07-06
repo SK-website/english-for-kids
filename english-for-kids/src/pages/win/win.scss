@@ -1,0 +1,15 @@
+.win {
+  position: relative;
+  background: url(" ./../../assets/res/coala-good-job.svg") no-repeat center;
+  background: url(" ../../assets/res/coala-good-job.svg") no-repeat center;
+  background-size: cover;
+  z-index: 1000;
+}
+.win-text {
+  position: absolute;
+  margin-top: 10rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f33346;
+}

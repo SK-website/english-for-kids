@@ -2,16 +2,18 @@ import { BaseComponent } from "./components/base-component";
 import './styles.scss';
 import { Header } from "./components/header/header";
 import { Navbar } from "./components/navbar/navbar";
-import { MainPage } from "./components/pages/main";
+import { MainPage } from "./pages/main";
 import { Game } from "./components/game/game";
-import { CardInfo, ImageCategoryModel } from "./models/image-category-model";
+
 import { getCategoriesCardsInfo } from "./api/api";
 import store from "./redux/store";
 import { Train } from "./components/train/train";
-import { CategoryLink } from "./components/category-link/category-link";
-import { CurrentCategory, InitState } from "./models/redux-models";
+
+import { CurrentCategory, GameSet, PlayMode } from "./models/redux-models";
 import { chooseCategory, showMenu } from "./redux/actionsCreators";
 import { ResultHearts } from "./components/result-hearts/result-hearts";
+import { WinPage } from "./pages/win/win";
+
 
 
 export class App {
@@ -22,7 +24,8 @@ export class App {
   private navbar: Navbar;
   private game: Game;
   private train: Train;
-  private hearts: ResultHearts
+  private hearts: ResultHearts;
+  private winPage: WinPage;
 
 
   constructor() {
@@ -31,6 +34,7 @@ export class App {
     this.navbar = new Navbar();
     this.game = new Game();
     this.train = new Train();
+    this.winPage = new WinPage();
     this.hearts = new ResultHearts();
     this.mainElement = document.getElementById('main');
     // this.mainElement?.insertAdjacentElement('beforebegin', this.navbar.element);
@@ -47,12 +51,19 @@ export class App {
     store.subscribe(() => {
       const state = store.getState();
       const category: CurrentCategory = state.currentCategory;
-      if (!(category.currentCategory === ''))
-        this.startTrain(category.currentCategory);
-
+      const playMode: PlayMode = state.playMode;
       if (category.currentCategory === 'categories')
         this.start();
-
+      else if ((category.currentCategory !== '') && (playMode.playMode === false))
+        this.startTrain(category.currentCategory);
+      else if ((category.currentCategory !== '') && (playMode.playMode === true))
+        this.startGame(category.currentCategory);
+      if (state.correctAnswerCounter === 8 && state.mistakesCounter === 0) {
+        if (this.mainElement) {
+          this.mainElement.innerHTML = '';
+          this.mainElement?.appendChild(this.winPage.element)
+        }
+      }
     })
   }
 
@@ -76,16 +87,31 @@ export class App {
     }
   }
 
+  // async startGame(category: string) {
+  //   console.log('startGame works', store.getState().currentCategory)
+  //   if (this.mainElement) {
+  //     this.mainElement.innerHTML = '';
+  //     this.mainElement.appendChild(this.game.element);
+  //     const categories = await getCategoriesCardsInfo();
+  //     const cat = categories.find(el => el.category === category);
+  //     console.log(cat);
+  //     if (cat) this.game.newGame(cat);
+  //     // store.dispatch(chooseCategory(''))
+  //   }
+
   async startGame(category: string) {
     console.log('startGame works', store.getState().currentCategory)
     if (this.mainElement) {
       this.mainElement.innerHTML = '';
-      this.mainElement.appendChild(this.game.element);
+      const startNewGame = new Game();
+      // this.mainElement.appendChild(this.game.element);
+      this.mainElement.appendChild(startNewGame.element);
       const categories = await getCategoriesCardsInfo();
       const cat = categories.find(el => el.category === category);
       console.log(cat);
-      if (cat) this.game.newGame(cat);
-      // store.dispatch(chooseCategory(''))
+      if (cat) startNewGame.newGame(cat);
+      // if (cat) this.game.newGame(cat);
+      store.dispatch(chooseCategory(''))
     }
   }
 

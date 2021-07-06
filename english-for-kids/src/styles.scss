@@ -436,7 +436,12 @@ h1 {
   // }
 }
 .hidden {
-  display: none;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+.before-start {
+  pointer-events: none;
 }
 
 .img-card {
@@ -445,18 +450,20 @@ h1 {
   margin-bottom: 10px;
   width: 90%;
   height: 70%;
+  background-color: #ffffff;
+  transition: all 0.5s;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   background-image: url("./assets/animals/animals16-leopard.svg");
+  transition: all 0.5s;
 }
 .play {
   height: 90%;
-  transition: transform;
 }
 
 .inactive {
-  opacity: 0.3;
+  opacity: 0.2;
   pointer-events: none;
 }
 
@@ -502,41 +509,44 @@ h1 {
   text-transform: uppercase;
   font-size: 1rem;
 }
-.start-button-wrapper {
-  margin: 0 auto;
-  width: 70%;
-  display: flex;
-  justify-content: center;
-}
-.start-button {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 190px;
-  border: 3px solid #f33346;
-  background-color: #ffd747;
-  font-size: 1rem;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 4.5rem;
-  color: #f33346;
-  font-weight: 700;
-  transition: transform ease-in-out 0.3s;
-  &:hover {
-    transform: rotate(360deg) scale(1.2);
-  }
-}
-.start-button.repeat {
-  // width: 50px;
-  // height: 50px;
-  background-color: #ffd747;
-  background-image: url("./assets/icons/reset40.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform ease-in-out 0.3s;
-  &:hover {
-    transform: rotate(360deg) scale(1.2);
-  }
-}
+// .start-button-wrapper {
+//   margin: 0 auto;
+//   width: 70%;
+//   display: flex;
+//   justify-content: center;
+// }
+// .start-button {
+//   width: 4.5rem;
+//   height: 4.5rem;
+//   border-radius: 190px;
+//   border: 3px solid #f33346;
+//   background-color: #ffd747;
+//   font-size: 1rem;
+//   text-transform: uppercase;
+//   text-align: center;
+//   line-height: 4.5rem;
+//   color: #f33346;
+//   font-weight: 700;
+//   transition: transform ease-in-out 0.3s;
+//   &:hover {
+//     transform: rotate(360deg) scale(1.2);
+//   }
+// }
+// .start-button-repeat {
+//   background-color: #ffd747;
+//   background-image: url("./assets/icons/reset40.png");
+//   background-repeat: no-repeat;
+//   background-position: center;
+// transition: transform ease-in-out 0.3s;
+// &:hover {
+//   transform: rotate(360deg) scale(1.2);
+// }
+// }
+
+// .none {
+//   display: none;
+// }
+
 .res {
   margin: 0 auto;
   width: 700px;
@@ -551,20 +561,19 @@ h1 {
 .img-res {
   width: 80%;
   height: 80%;
-
   background-size: cover;
 }
 
-.yes {
-  background: url("./assets/res/coala-good-job.svg") no-repeat center;
-  background-size: cover;
-}
-.no {
+.loss {
   background: url("./assets/res/coala-no.svg") no-repeat center;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+// .win {
+//   background: url(" ./assets/res/coala-good-job.svg") no-repeat center;
+//   background-size: cover;
+// }
 
 @media screen and (max-width: 420px) {
   html {

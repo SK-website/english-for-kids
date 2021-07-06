@@ -23,3 +23,17 @@ export interface PlayMode {
   playMode: boolean
 }
 
+export interface GameSet {
+  gameState: boolean,
+
+}
+
+// export interface GameState {
+//   gameState: boolean
+// }
+// export interface MistakesCounter {
+//   mistakesCounter: number
+// }
+// export interface CorrectAnswerCounter {
+//   correctAnswerCounter: number
+// }

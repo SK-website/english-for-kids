@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import { Action, CurrentCategory, InitState, State } from '../../models/redux-models';
-import { ACTIVE_CATEGORY, CHOOSE_CATEGORY, PLAY_MODE, SHOW_MENU, TRAIN_MODE } from '../actionTypes';
-import { initialCurrentCategoryState, initialMenuState, initialModeState } from '../initialState';
+import { Action } from '../../models/redux-models';
+import { correctCounterIncrement } from '../actionsCreators';
+import { ACTIVE_CATEGORY, CHOOSE_CATEGORY, CORRECT_INCREMENT, END_GAME, MISTAKES_INCREMENT, PLAY_MODE, SHOW_MENU, START_GAME, TRAIN_MODE } from '../actionTypes';
+import { initialCurrentCategoryState, initialGameSet, initialMenuState, initialModeState } from '../initialState';
 
 function showMenuReducer(state = initialMenuState, action: Action) {
   switch (action.type) {
@@ -30,18 +31,42 @@ function changeMode(state = initialModeState, action: Action) {
     default: return state;
   }
 }
-// function setActiveCategory(state = initialCurrentCategoryState, action: Action) {
-//   switch (action.type) {
-//     case ACTIVE_CATEGORY:
-//       return { ...state, activeCategory: action.payload };
-//     default: return state;
-//   }
-// }
+
+
+function setGame(state = initialGameSet, action: Action) {
+  switch (action.type) {
+    case START_GAME:
+      return { ...state, gameState: true };
+    case END_GAME:
+      return { ...state, gameState: false };
+
+    default: return state;
+  }
+}
+
+function correctAnswerCounter(correctAnswerCounter = 0, action: Action) {
+  switch (action.type) {
+    case CORRECT_INCREMENT:
+      return correctAnswerCounter + 1
+    default: return correctAnswerCounter
+  }
+}
+function mistakesCounter(mistakesCounter = 0, action: Action) {
+  switch (action.type) {
+    case MISTAKES_INCREMENT:
+      return mistakesCounter + 1
+    default: return mistakesCounter
+  }
+}
+
 
 export const rootReducer = combineReducers({
   showMenu: showMenuReducer,
   currentCategory: currentCategory,
   playMode: changeMode,
-  // activeCategory: setActiveCategory
+  gameSet: setGame,
+  mistakesCounter: mistakesCounter,
+  correctAnswerCounter: correctAnswerCounter
+
 
 })

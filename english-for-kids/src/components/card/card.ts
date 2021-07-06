@@ -1,4 +1,5 @@
 import { CardInfo } from '../../models/image-category-model';
+import store from '../../redux/store';
 import '../../styles.scss';
 
 import { BaseComponent } from "../base-component"
@@ -11,6 +12,10 @@ export class Card extends BaseComponent {
   public card: BaseComponent
   public cardFront: BaseComponent;
   public cardBack: BaseComponent;
+  public cardInfoFront: BaseComponent;
+  public cardImg: BaseComponent;
+  public cardAudioUrl: string;
+
 
 
   // isFlipped = false;
@@ -20,17 +25,17 @@ export class Card extends BaseComponent {
     this.card = new BaseComponent('div', ['card']);
 
     this.cardFront = new BaseComponent('div', ['card-front']);
-    const cardImg = new BaseComponent('div', ['img-card']);
-    cardImg.element.style.backgroundImage = `url(./${categoryName}/${info.img})`;
-    const cardInfoFront = new BaseComponent('div', ['info-block']);
+    this.cardImg = new BaseComponent('div', ['img-card']);
+    this.cardImg.element.style.backgroundImage = `url(./${categoryName}/${info.img})`;
+    this.cardInfoFront = new BaseComponent('div', ['info-block']);
     const cardWordEng = new BaseComponent('div', ['spelling']);
     cardWordEng.element.textContent = `${info.spelling_eng}`;
     this.flippButton = new BaseComponent('div', ['flipp-button']);
 
-    cardInfoFront.element.appendChild(cardWordEng.element);
-    cardInfoFront.element.appendChild(this.flippButton.element);
-    this.cardFront.element.appendChild(cardImg.element);
-    this.cardFront.element.appendChild(cardInfoFront.element);
+    this.cardInfoFront.element.appendChild(cardWordEng.element);
+    this.cardInfoFront.element.appendChild(this.flippButton.element);
+    this.cardFront.element.appendChild(this.cardImg.element);
+    this.cardFront.element.appendChild(this.cardInfoFront.element);
 
 
     this.cardBack = new BaseComponent('div', ['card-back']);
@@ -47,10 +52,11 @@ export class Card extends BaseComponent {
     this.card.element.appendChild(this.cardFront.element);
     this.card.element.appendChild(this.cardBack.element)
     this.element.appendChild(this.card.element);
+    this.cardAudioUrl = `./audio/${categoryName}/${info.audio}`;
 
     this.cardFront.element.addEventListener('click', () => {
-      console.log(`audio play onclick`)
-      this.playNote(`./audio/${categoryName}/${info.audio}`);
+      if (store.getState().playMode.playMode === false)
+        Card.playNote(this.cardAudioUrl);
 
     })
     this.flippButton.element.addEventListener('click', () => {
@@ -58,11 +64,7 @@ export class Card extends BaseComponent {
       this.flippToBack();
 
     })
-    // this.cardFront.element.addEventListener('mouseout', () => {
-    //   console.log(`flipp onclick`)
-    //   this.flippToFront();
 
-    // })
     this.card.element.addEventListener('mouseleave', (ev: MouseEvent) => {
       ev.stopPropagation();
       this.flippToFront();
@@ -77,7 +79,7 @@ export class Card extends BaseComponent {
   }
 
 
-  playNote(src: string) {
+  static playNote(src: string) {
     const audio = new Audio();
     audio.src = src;
     audio.currentTime = 0;

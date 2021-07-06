@@ -35,7 +35,7 @@ export class Navbar {
     this.animals1Link = new CategoryLink('animals1', 'animals (set1)', ['navbar-icon', 'pig'], linksList);
     this.animals2Link = new CategoryLink('animals2', 'animals (set2)', ['navbar-icon', 'whale'], linksList);
     this.animals3Link = new CategoryLink('animals3', 'animals (set3)', ['navbar-icon', 'bug'], linksList);
-    this.emotionsLink = new CategoryLink('emotions', 'emotions', ['navbar-icon', 'emotions'], linksList);
+    this.emotionsLink = new CategoryLink('sports', 'sports', ['navbar-icon', 'sports'], linksList);
     this.fairytalesLink = new CategoryLink('fairytales', 'fairytales', ['navbar-icon', 'fairytales'], linksList);
     this.food1Link = new CategoryLink('food1', 'food (set1)', ['navbar-icon', 'food1'], linksList);
     this.food2Link = new CategoryLink('food2', 'food (set2)', ['navbar-icon', 'food2'], linksList);

@@ -2,7 +2,6 @@ import { ACTIVE_CATEGORY } from "./actionTypes"
 
 export const initialMenuState = {
   showMenu: false,
-  // currentCategory: ''
 }
 export const initialCurrentCategoryState = {
   currentCategory: '',
@@ -11,4 +10,9 @@ export const initialCurrentCategoryState = {
 
 export const initialModeState = {
   playMode: false
+}
+
+export const initialGameSet = {
+  gameState: false
+
 }

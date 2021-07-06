@@ -220,66 +220,207 @@
         "spelling_rus": "хлеб",
         "audio": "bread-gb.mp3"
       },
-      "food1-bread.svg",
-      "food2-orange.svg",
-      "food3-pear.svg",
-      "food4-salad.svg",
-      "food5-sandwich.svg",
-      "food6-banan.svg",
-      "food7-сhips.svg",
-      "food8-pasta.svg"
+      {
+        "img": "food2-orange.svg",
+        "spelling_eng": "orange",
+        "spelling_rus": "апельсин",
+        "audio": "orange-gb.mp3"
+      },
+      {
+        "img": "food3-pear.svg",
+        "spelling_eng": "pear",
+        "spelling_rus": "груша",
+        "audio": "pear-gb.mp3"
+      },
+      {
+        "img": "food4-salad.svg",
+        "spelling_eng": "salad",
+        "spelling_rus": "салат",
+        "audio": "salad-us.mp3"
+      },
+      {
+        "img": "food5-sandwich.svg",
+        "spelling_eng": "sandwich",
+        "spelling_rus": "бутерброд",
+        "audio": "sandwich-gb.mp3"
+      },
+      {
+        "img": "food6-banan.svg",
+        "spelling_eng": "banana",
+        "spelling_rus": "банан",
+        "audio": "banana-gb.mp3"
+      },
+      {
+        "img": "food7-chips.svg",
+        "spelling_eng": "chips",
+        "spelling_rus": "картофель фри",
+        "audio": "chips-gb.mp3"
+      },
+      {
+        "img": "food8-pasta.svg",
+        "spelling_eng": "pasta",
+        "spelling_rus": "макароны",
+        "audio": "pasta-gb.mp3"
+      }
     ]
   },
   {
     "category": "food2",
     "info": [
-      "food10-soup.svg",
-      "food11-donut.svg",
-      "food19-cake.svg",
-      "food13-pizza.svg",
-      "food14-egg.svg",
-      "food20-noodles.svg",
-      "food23-ice-cream.svg",
-      "food28-pancake.svg"
+      {
+        "img": "food10-soup.svg",
+        "spelling_eng": "soup",
+        "spelling_rus": "суп",
+        "audio": "soup-us.mp3"
+      },
+      {
+        "img": "food11-donut.svg",
+        "spelling_eng": "donut",
+        "spelling_rus": "пончик",
+        "audio": "donut-gb.mp3"
+      },
+      {
+        "img": "food19-cake.svg",
+        "spelling_eng": "cake",
+        "spelling_rus": "торт",
+        "audio": "cake-us.mp3"
+      },
+      {
+        "img": "food13-pizza.svg",
+        "spelling_eng": "pizza",
+        "spelling_rus": "пицца",
+        "audio": "pizza-gb.mp3"
+      },
+      {
+        "img": "food14-egg.svg",
+        "spelling_eng": "egg",
+        "spelling_rus": "яйцо",
+        "audio": "egg-us.mp3"
+      },
+      {
+        "img": "food20-noodles.svg",
+        "spelling_eng": "noodles",
+        "spelling_rus": "лапша",
+        "audio": "noodles-gb.mp3"
+      },
+      {
+        "img": "food23-ice-cream.svg",
+        "spelling_eng": "ice-cream",
+        "spelling_rus": "мороженное",
+        "audio": "ice-cream-gb.mp3"
+      },
+      {
+        "img": "food29-pancake.png",
+        "spelling_eng": "pancake",
+        "spelling_rus": "блин",
+        "audio": "pancake-gb.mp3"
+      }
     ]
   },
   {
     "category": "sports",
     "info": [
-      "sports1-bicycle.svg",
-      "sports2-skates.svg",
-      "sports4-bat.svg",
-      "sports6-racket.svg",
-      "sports7-skate.svg",
-      "sports8-cup.svg",
-      "sports5-ball.svg",
-      "sports9-mitt.svg"
+      {
+        "img": "sports1-bicycle.svg",
+        "spelling_eng": "bicycle",
+        "spelling_rus": "велосипед",
+        "audio": "bicycle-us.mp3"
+      },
+      {
+        "img": "sports2-skates.svg",
+        "spelling_eng": "skates",
+        "spelling_rus": "велосипед",
+        "audio": "skates-gb.mp3"
+      },
+      {
+        "img": "sports4-bat.svg",
+        "spelling_eng": "bat",
+        "spelling_rus": "бита",
+        "audio": "bat-gb.mp3"
+      },
+      {
+        "img": "sports6-racket.svg",
+        "spelling_eng": "racket",
+        "spelling_rus": "ракетка",
+        "audio": "racket-gb.mp3"
+      },
+      {
+        "img": "sports7-skate.svg",
+        "spelling_eng": "skateboard",
+        "spelling_rus": "скейтборд",
+        "audio": "skateboard-gb.mp3"
+      },
+      {
+        "img": "sports8-cup.svg",
+        "spelling_eng": "cup",
+        "spelling_rus": "кубок",
+        "audio": "cup-gb.mp3"
+      },
+      {
+        "img": "sports5-ball.svg",
+        "spelling_eng": "ball",
+        "spelling_rus": "мяч",
+        "audio": "ball-gb.mp3"
+      },
+      {
+        "img": "sports9-mitt.svg",
+        "spelling_eng": "mitt",
+        "spelling_rus": "боксерские перчатки",
+        "audio": "mitt-gb.mp3"
+      }
     ]
   },
   {
     "category": "actions",
     "info": [
-      "actions10-draw.png",
-      "actions1-jump.svg",
-      "actions2-throw.svg",
-      "actions3-run.svg",
-      "actions4-relax.jpg",
-      "actions6-play.png",
-      "actions7-walk.svg",
-      "actions11-pull.png"
-    ]
-  },
-  {
-    "category": "emotions",
-    "info": [
-      "emotions-love.svg",
-      "actions1-jump.svg",
-      "actions2-throw.svg",
-      "actions3-run.svg",
-      "actions4-relax.jpg",
-      "actions6-play.png",
-      "actions7-walk.svg",
-      "actions11-pull.png"
+      {
+        "img": "actions10-draw.png",
+        "spelling_eng": "draw",
+        "spelling_rus": "рисовать",
+        "audio": "draw-us.mp3"
+      },
+      {
+        "img": "actions1-jump.svg",
+        "spelling_eng": "jump",
+        "spelling_rus": "прыгать",
+        "audio": "jump-gb.mp3"
+      },
+      {
+        "img": "actions2-throw.svg",
+        "spelling_eng": "throw",
+        "spelling_rus": "бросать",
+        "audio": "throw-gb.mp3"
+      },
+      {
+        "img": "actions3-run.svg",
+        "spelling_eng": "run",
+        "spelling_rus": "бежать",
+        "audio": "run-gb.mp3"
+      },
+      {
+        "img": "actions4-relax.jpg",
+        "spelling_eng": "relax",
+        "spelling_rus": "отдыхать",
+        "audio": "relax-gb.mp3"
+      },
+      {
+        "img": "actions6-play.png",
+        "spelling_eng": "play",
+        "spelling_rus": "играть",
+        "audio": "play-gb.mp3"
+      },
+      {
+        "img": "actions7-walk.svg",
+        "spelling_eng": "walk",
+        "spelling_rus": "идти",
+        "audio": "walk-gb.mp3"
+      },
+      {
+        "img": "actions11-pull.png",
+        "spelling_eng": "pull",
+        "spelling_rus": "тянуть",
+        "audio": "pull-gb.mp3"
+      }
     ]
   }
 ]

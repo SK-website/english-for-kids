@@ -1,9 +1,9 @@
 
-import '../../styles.scss';
+// import './../styles.scss';
 
-import { BaseComponent } from "../base-component";
-import { Category } from "../category/category";
-import { ResultHearts } from '../result-hearts/result-hearts';
+import { BaseComponent } from "./../components/base-component";
+import { Category } from "./../components/category/category";
+import { ResultHearts } from './../components/result-hearts/result-hearts';
 
 export class MainPage extends BaseComponent {
   public actionsCategory: Category;
@@ -23,7 +23,7 @@ export class MainPage extends BaseComponent {
     this.animals1Category = new Category('animals1', 'animals (set 1)', './animals/leopard-1456554_640.png', cardsField.element);
     this.animals2Category = new Category('animals2', 'animals (set 2)', './animals/animals-all5.png', cardsField.element);
     this.animals3Category = new Category('animals3', 'animals (set 3)', './animals/animals-all6.png', cardsField.element);
-    this.emotionsCategory = new Category('emotions', 'emotions', './emotions/emotions-all1.svg', cardsField.element);
+    this.emotionsCategory = new Category('sports', 'sports', './sports/sports-all.svg', cardsField.element);
     this.fairytalesCategory = new Category('fairytales', 'fairytales', './fairytales/fairytales-all.png', cardsField.element);
     this.food1Category = new Category('food1', 'food (set 1)', './food2/food-all3.png', cardsField.element);
     this.food2Category = new Category('food2', 'food (set 2)', './food2/food-all4.svg', cardsField.element);

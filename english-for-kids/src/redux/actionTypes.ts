@@ -6,6 +6,9 @@ export const ENABLE_BUTTONS = 'ENABLE_BUTTONS';
 export const SHOW_MENU = 'SHOW_MENU';
 export const PLAY_MODE = 'PLAY_MODE';
 export const TRAIN_MODE = 'TRAIN_MODE';
-export const CHANGE_MODE = 'CHANGE_MODE';
 export const ACTIVE_CATEGORY = 'ACTIVE_CATEGORY';
+export const START_GAME = 'START_GAME';
+export const END_GAME = 'END_GAME';
 
+export const CORRECT_INCREMENT = 'CORRECT_INCREMENT';
+export const MISTAKES_INCREMENT = 'MISTAKES_INCREMENT';
