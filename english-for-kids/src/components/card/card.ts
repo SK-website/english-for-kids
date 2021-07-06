@@ -2,23 +2,24 @@ import { CardInfo } from '../../models/image-category-model';
 import store from '../../redux/store';
 import '../../styles.scss';
 
-import { BaseComponent } from "../base-component"
-
+import { BaseComponent } from '../base-component';
 
 // const FLIP_CLASS = 'flipped';
 
 export class Card extends BaseComponent {
   public flippButton: BaseComponent;
-  public card: BaseComponent
+
+  public card: BaseComponent;
+
   public cardFront: BaseComponent;
+
   public cardBack: BaseComponent;
+
   public cardInfoFront: BaseComponent;
+
   public cardImg: BaseComponent;
+
   public cardAudioUrl: string;
-
-
-
-  // isFlipped = false;
 
   constructor(readonly categoryName: string, info: CardInfo) {
     super('div', ['card-container']);
@@ -37,7 +38,6 @@ export class Card extends BaseComponent {
     this.cardFront.element.appendChild(this.cardImg.element);
     this.cardFront.element.appendChild(this.cardInfoFront.element);
 
-
     this.cardBack = new BaseComponent('div', ['card-back']);
     const cardImgBack = new BaseComponent('div', ['img-card']);
     cardImgBack.element.style.backgroundImage = `url(./${categoryName}/${info.img})`;
@@ -50,58 +50,35 @@ export class Card extends BaseComponent {
     this.cardBack.element.appendChild(cardInfoBack.element);
 
     this.card.element.appendChild(this.cardFront.element);
-    this.card.element.appendChild(this.cardBack.element)
+    this.card.element.appendChild(this.cardBack.element);
     this.element.appendChild(this.card.element);
     this.cardAudioUrl = `./audio/${categoryName}/${info.audio}`;
 
     this.cardFront.element.addEventListener('click', () => {
-      if (store.getState().playMode.playMode === false)
-        Card.playNote(this.cardAudioUrl);
-
-    })
+      if (store.getState().playMode.playMode === false) Card.playNote(this.cardAudioUrl);
+    });
     this.flippButton.element.addEventListener('click', () => {
-      console.log(`flipp onclick`)
       this.flippToBack();
-
-    })
+    });
 
     this.card.element.addEventListener('mouseleave', (ev: MouseEvent) => {
       ev.stopPropagation();
       this.flippToFront();
-    })
+    });
   }
 
-  flippToBack() {
+  flippToBack(): void {
     this.card.element.classList.add('flipped');
   }
-  flippToFront() {
+
+  flippToFront(): void {
     this.card.element.classList.remove('flipped');
   }
 
-
-  static playNote(src: string) {
+  static playNote(src: string): void {
     const audio = new Audio();
     audio.src = src;
     audio.currentTime = 0;
     audio.play();
   }
-
-
-  // flipToBack() {
-  //   this.isFlipped = true;
-  //   return this.flip(true);
-  // }
-
-  // flipToFront() {
-  //   this.isFlipped = false;
-  //   return this.flip();
-  // }
-
-  // private flip(isFront = false): Promise<void> {
-  //   return new Promise((resolve) => {
-  //     this.element.classList.toggle(FLIP_CLASS, isFront);
-  //     this.element.addEventListener('transitionend', () => resolve(), {
-  //       once: true,
-  //     });
-  //   });
 }

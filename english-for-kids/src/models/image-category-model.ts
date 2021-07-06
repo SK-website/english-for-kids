@@ -9,4 +9,3 @@ export interface CardInfo {
   spelling_rus: string,
   audio: string
 }
-

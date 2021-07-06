@@ -1,8 +1,14 @@
 import { combineReducers } from 'redux';
 import { Action } from '../../models/redux-models';
-import { correctCounterIncrement } from '../actionsCreators';
-import { ACTIVE_CATEGORY, CHOOSE_CATEGORY, CORRECT_INCREMENT, END_GAME, MISTAKES_INCREMENT, PLAY_MODE, RESET_COUNTER, SHOW_MENU, START_GAME, TRAIN_MODE } from '../actionTypes';
-import { initialCurrentCategoryState, initialGameSet, initialMenuState, initialModeState } from '../initialState';
+
+import {
+  ACTIVE_CATEGORY, CHOOSE_CATEGORY, CORRECT_INCREMENT, END_GAME, MISTAKES_INCREMENT,
+  PLAY_MODE, RESET_COUNTER, RESET_MISTAKE_COUNTER, SHOW_MENU, START_GAME, TRAIN_MODE,
+} from '../actionTypes';
+
+import {
+  initialCurrentCategoryState, initialGameSet, initialMenuState, initialModeState,
+} from '../initialState';
 
 function showMenuReducer(state = initialMenuState, action: Action) {
   switch (action.type) {
@@ -32,7 +38,6 @@ function changeMode(state = initialModeState, action: Action) {
   }
 }
 
-
 function setGame(state = initialGameSet, action: Action) {
   switch (action.type) {
     case START_GAME:
@@ -44,31 +49,31 @@ function setGame(state = initialGameSet, action: Action) {
   }
 }
 
-function correctAnswerCounter(correctAnswerCounter = 0, action: Action) {
+function correctAnswersCounter(correctAnswerCounter = 0, action: Action) {
   switch (action.type) {
     case CORRECT_INCREMENT:
-      return correctAnswerCounter + 1
+      return correctAnswerCounter + 1;
     case RESET_COUNTER:
-      return correctAnswerCounter = 0
-    default: return correctAnswerCounter
-  }
-}
-function mistakesCounter(mistakesCounter = 0, action: Action) {
-  switch (action.type) {
-    case MISTAKES_INCREMENT:
-      return mistakesCounter + 1
-    default: return mistakesCounter
+      return correctAnswerCounter - 8;
+    default: return correctAnswerCounter;
   }
 }
 
+function mistakesCounter(mistakeCounter = 0, action: Action) {
+  switch (action.type) {
+    case MISTAKES_INCREMENT:
+      return mistakeCounter + 1;
+    case RESET_MISTAKE_COUNTER:
+      return mistakeCounter - mistakeCounter;
+    default: return mistakeCounter;
+  }
+}
 
 export const rootReducer = combineReducers({
   showMenu: showMenuReducer,
-  currentCategory: currentCategory,
+  currentCategory,
   playMode: changeMode,
   gameSet: setGame,
-  mistakesCounter: mistakesCounter,
-  correctAnswerCounter: correctAnswerCounter
-
-
-})
+  mistakesCounter,
+  correctAnswersCounter,
+});

@@ -4,14 +4,7 @@
   background-size: cover;
   z-index: 1000;
 }
-.win-text {
-  position: absolute;
-  top: 50%;
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #f33346;
-}
+
 .win-text {
   position: absolute;
   top: 80%;
@@ -19,4 +12,17 @@
   font-size: 2rem;
   font-weight: 700;
   color: #f33346;
+}
+@media screen and (max-width: 640px) {
+  .win-text {
+    top: 50%;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .win-text {
+    top: 40%;
+    font-size: 1.3rem;
+  }
 }

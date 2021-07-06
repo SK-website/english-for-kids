@@ -1,18 +1,15 @@
-import { ACTIVE_CATEGORY } from "./actionTypes"
-
 export const initialMenuState = {
   showMenu: false,
-}
+};
 export const initialCurrentCategoryState = {
   currentCategory: '',
-  activeCategory: ''
-}
+  activeCategory: '',
+};
 
 export const initialModeState = {
-  playMode: false
-}
+  playMode: false,
+};
 
 export const initialGameSet = {
-  gameState: false
-
-}
+  gameState: false,
+};

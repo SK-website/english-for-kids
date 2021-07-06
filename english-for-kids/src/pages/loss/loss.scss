@@ -19,3 +19,17 @@
   font-weight: 700;
   color: #f33346;
 }
+
+@media screen and (max-width: 640px) {
+  .loss-text {
+    top: 50%;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .loss-text {
+    top: 40%;
+    font-size: 1.3rem;
+  }
+}

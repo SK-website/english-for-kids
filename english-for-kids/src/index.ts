@@ -6,7 +6,6 @@ import './styles.scss';
 
 // console.log('Hello world');
 
-import './styles.scss';
 import { App } from './app';
 
 window.onload = () => {

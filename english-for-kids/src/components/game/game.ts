@@ -1,7 +1,6 @@
-import './../../styles.scss';
+import '../../styles.scss';
 import store from '../../redux/store';
 import { ImageCategoryModel } from '../../models/image-category-model';
-import { GameSet } from '../../models/redux-models';
 import { correctCounterIncrement, mistakesCounterIncrement, setStartGame } from '../../redux/actionsCreators';
 import { BaseComponent } from '../base-component';
 import { Card } from '../card/card';
@@ -10,32 +9,34 @@ import { StartRepeatButton } from '../start-repeat-button/start-repeat-button';
 import { ResultHearts } from '../result-hearts/result-hearts';
 
 export class Game extends BaseComponent {
-
   public cardsField: CardsField;
+
   private allCardsAudio: string[];
+
   private readonly startRepeatButton: StartRepeatButton;
+
   private hearts: ResultHearts;
 
   constructor() {
     super();
     this.allCardsAudio = [];
-    this.startRepeatButton = new StartRepeatButton;
+    this.startRepeatButton = new StartRepeatButton();
     this.cardsField = new CardsField();
     this.hearts = new ResultHearts();
     this.element.appendChild(this.cardsField.element);
     this.element.appendChild(this.startRepeatButton.element);
-    this.element.insertAdjacentElement("afterbegin", this.hearts.container.element)
+    this.element.insertAdjacentElement('afterbegin', this.hearts.container.element);
   }
 
-  newGame(categoryData: ImageCategoryModel): void {
+  async newGame(categoryData: ImageCategoryModel): Promise<void> {
     let counter = 0;
     this.cardsField.clear();
     const cards = categoryData.info
       .map((cardInfo) => new Card(categoryData.category, cardInfo))
       .sort(() => Math.random() - 0.5);
 
-    cards.forEach((card) => {
-      card.element.classList.add('before-start')
+    await cards.forEach((card) => {
+      card.element.classList.add('before-start');
       card.cardInfoFront.element.classList.add('hidden');
       card.cardImg.element.classList.add('play');
       this.allCardsAudio.push(card.cardAudioUrl);
@@ -44,30 +45,31 @@ export class Game extends BaseComponent {
     this.mixAudio();
 
     cards.forEach((card) => {
-      card.element.addEventListener('click', () => {
+      card.cardImg.element.addEventListener('click', () => {
+        if (counter > this.allCardsAudio.length) return;
         if (card.cardAudioUrl === this.allCardsAudio[counter]) {
           counter++;
-          this.playCorrectNote();
+          Game.playCorrectNote();
           card.cardImg.element.classList.add('inactive');
+          // card.element.classList.add('inactive');
           this.hearts.addYellowHeart();
           store.dispatch(correctCounterIncrement());
-          this.playNextAudio(counter);
+          setTimeout(() => this.playNextAudio(counter), 1000);
         } else {
-          this.playIncorrectNote();
+          Game.playIncorrectNote();
           this.hearts.addGreyHeart();
           store.dispatch(mistakesCounterIncrement());
         }
-        if (counter === 8) return
-      })
+      });
 
       store.subscribe(() => {
         const state = store.getState();
-        const gameSet: GameSet = state.gameSet;
+        const { gameSet } = state;
         if (gameSet.gameState === true) {
-          card.element.classList.remove('before-start')
+          card.element.classList.remove('before-start');
         }
-      })
-    })
+      });
+    });
 
     this.cardsField.addCards(cards);
 
@@ -76,27 +78,25 @@ export class Game extends BaseComponent {
       this.startRepeatButton.startButton.element.classList.add('none');
       this.startRepeatButton.repeatButton.element.classList.remove('none');
       store.dispatch(setStartGame());
-    }, false)
+    }, false);
     this.startRepeatButton.repeatButton.element.addEventListener('click', (): void => {
-      this.playNextAudio(counter);
+      setTimeout(() => this.playNextAudio(counter), 1000);
     });
   }
 
-  playNextAudio(n: number) {
-    console.log('next')
+  playNextAudio(n: number): void {
     Card.playNote(this.allCardsAudio[n]);
   }
 
-  playCorrectNote() {
-    Card.playNote(`./audio/game/correct1.mp3`);
+  static playCorrectNote(): void {
+    Card.playNote('./audio/game/correct1.mp3');
   }
 
-  playIncorrectNote() {
-    Card.playNote(`./audio/game/ops1.mp3`)
+  static playIncorrectNote(): void {
+    Card.playNote('./audio/game/ops1.mp3');
   }
-  mixAudio() {
-    console.log('before', this.allCardsAudio);
-    this.allCardsAudio.sort(() => Math.random() - 0.3);
-    console.log('after', this.allCardsAudio);
+
+  mixAudio(): void {
+    this.allCardsAudio.sort(() => Math.random() - 0.5);
   }
 }

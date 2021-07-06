@@ -1,16 +1,3 @@
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("./assets/fonts/Roboto-Regular.ttf");
-// }
-
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("./assets/fonts/Roboto-Bold.ttf");
-// }
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("./assets/fonts/Roboto-Medium.ttf");
-// }
 @font-face {
   font-family: "Quicksand";
   src: url("./assets/fonts/Quicksand-Medium.ttf");
@@ -55,19 +42,14 @@ img {
 }
 
 body {
-  min-height: 100%;
-  padding: 1.8rem 1.8rem 6rem 1.8rem;
+  min-height: 100vh;
+  padding: 1.5rem 1.5rem 2.5rem 1.8rem;
   font-family: Quicksand, sans-serif;
   color: #f33346;
-  // color: #ffd747;
-  // background: url("./assets/seamless-pattern-1089797_1920.png");
-  // background: url("./assets/polka-dots-937612.jpg");
-  // background: url("./assets/background-1749545_1920.jpg");
   background: url("./assets/paper-flower-background-4794429_1920.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // background: url("./assets/flowers-5747688.svg");
   font-size: 1rem;
 }
 
@@ -76,12 +58,7 @@ button {
 }
 
 .main {
-  // margin-top: 30vh;
   max-height: auto;
-
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
 }
 
 h1 {
@@ -91,26 +68,12 @@ h1 {
 }
 .nav {
   margin: 0 auto;
-  // padding-left: 3.94%;
-  // padding-right: 3.94%;
   width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-// burger-menu
-// .results {
-//   margin: 0 auto;
-//   padding-top: 1%;
-//   // padding-left: 3.94%;
-//   // padding-right: 3.94%;
-//   width: 75%;
-//   height: 2rem;
-//   display: flex;
-//   justify-content: flex-end;
-//   height: 26px;
-//   overflow: hidden;
-// }
+
 .right-img-result {
   background: url("./assets/icons/heart-yel26.png");
   width: 26px;
@@ -121,225 +84,6 @@ h1 {
   width: 26px;
   height: 26px;
 }
-// .menu-wrapper {
-//   width: 4.5rem;
-//   height: 4.5rem;
-//   border-radius: 50%;
-//   border: 3px solid #f33346;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: #ffffff;
-
-//   transition: transform (ease-in-out) 0.7s;
-
-//   &:hover {
-//     transform: rotate(720deg) scale(1.2);
-//     background-color: #ffd747;
-//     color: #8ceeee;
-//   }
-// }
-
-// .menu {
-//   border-color: #f33346;
-//   transition: transform (ease-in-out) 0.7s;
-//   cursor: pointer;
-
-//   &:hover {
-//     transform: scale(1.2);
-//     background-color: #ffd747;
-//   }
-// }
-// .menu-line {
-//   margin: 0 auto;
-//   width: 1.8rem;
-//   height: 0.3rem;
-//   border-bottom: #f33346 solid 4px;
-// }
-// .navbar {
-//   position: fixed;
-//   top: 0;
-//   right: 0px;
-//   // right: -1000px;
-//   width: 40%;
-//   height: 100%;
-//   transition: right 1s ease-in-out;
-//   overflow: auto;
-//   background: #ffd747;
-// }
-// .close-btn {
-//   width: 30px;
-//   height: 30px;
-//   border-color: transparent;
-//   background: url("./assets/icons/close-red30.png") no-repeat;
-//   transition: transform (ease-in-out) 0.3s;
-//   cursor: pointer;
-
-//   &:hover {
-//     transform: rotate(360deg);
-//   }
-// }
-// .active-menu {
-//   top: 94px;
-//   pointer-events: all;
-//   transition: right 1s;
-// }
-// .navbar-list {
-//   // width: 30%;
-//   // height: 100vh;
-//   margin-top: 10%;
-//   margin-left: 20%;
-//   height: auto;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: start;
-//   color: #443444;
-//   // color: #725a72;
-//   font-size: 1.5rem;
-//   text-transform: capitalize;
-// }
-// .navbar-list-item {
-//   position: relative;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-//   padding-bottom: 10px;
-//   width: 100%;
-//   text-align: left;
-//   line-height: 50px;
-//   vertical-align: top;
-//   z-index: 100;
-//   transition: all ease-in-out 0.3s;
-//   cursor: pointer;
-
-//   &:hover {
-//     color: #f33346;
-//     text-decoration: underline;
-//   }
-// }
-// .current-page-item {
-//   color: #838888;
-//   text-decoration: underline;
-//   pointer-events: none;
-// }
-
-// .navbar-icon {
-//   display: inline-block;
-//   width: 60px;
-//   height: 50px;
-
-//   background-size: contain;
-// }
-// .pig {
-//   background: url("./assets/icons/pig48.png") no-repeat;
-// }
-// .whale {
-//   background: url("./assets/icons/whale48.png") no-repeat;
-// }
-// .bug {
-//   background: url("./assets/icons/bug48.png") no-repeat;
-// }
-// .food1 {
-//   background: url("./assets/icons/milk48.png") no-repeat;
-// }
-// .food2 {
-//   background: url("./assets/icons/food5.png") no-repeat;
-// }
-// .emotions {
-//   background: url("./assets/icons/tom48.png") no-repeat;
-// }
-
-// .actiions {
-//   background: url("./assets/icons/sports.png") no-repeat;
-// }
-// .fairytales {
-//   background: url("./assets/icons/castel48.png") no-repeat;
-// }
-// .main-page-icon {
-//   background: url("./assets/icons/frog48.png") no-repeat;
-// }
-// //switcher train-game start
-// .play-switch-btn {
-//   // width: 6rem;
-//   z-index: 1;
-//   position: relative;
-//   width: 6.9rem;
-//   height: 2rem;
-//   border-radius: 190px;
-// }
-// .play-switch {
-//   position: relative;
-//   display: inline-block;
-//   width: 7rem;
-//   height: 2.1rem;
-// }
-
-// .play-switch-box {
-//   opacity: 0;
-//   width: 0;
-//   height: 0;
-// }
-
-// .play-switch-slider {
-//   position: absolute;
-//   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-//   cursor: pointer;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   padding-left: 40px;
-//   line-height: 2.1rem;
-//   background-color: #ffffff;
-//   transition: 0.4s;
-//   border-radius: 190px;
-//   font-size: 1rem;
-//   text-transform: uppercase;
-// }
-
-// .none {
-//   display: none;
-// }
-
-// .play-switch-slider:before {
-//   position: absolute;
-//   content: "";
-//   height: 1.9rem;
-//   width: 1.9rem;
-//   left: 2px;
-//   right: 2px;
-//   bottom: 2px;
-//   top: 2px;
-//   border-radius: 50%;
-//   background-color: #f33346;
-//   box-shadow: 2px 4px 15px rgba(6, 12, 70, 0.15);
-//   transition: 0.4s;
-// }
-
-// .play-switch-box:checked + .play-switch-slider {
-//   position: absolute;
-//   cursor: pointer;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   padding-left: 15px;
-//   line-height: 2.1rem;
-//   background-color: #ffd747;
-//   color: #ffffff;
-//   transition: 0.4s;
-//   border-radius: 190px;
-//   font-size: 1rem;
-//   text-transform: uppercase;
-// }
-
-// .play-switch-box:checked + .play-switch-slider:before {
-//   -webkit-transform: translateX(4.9rem);
-//   -ms-transform: translateX(4.9rem);
-//   transform: translateX(4.9rem);
-//   background-color: #f33346;
-// }
-// //switcher train-game end
 
 .cards-field {
   margin: 0 auto;
@@ -372,7 +116,6 @@ h1 {
   box-shadow: 0 0.1rem 0.25rem black;
   transform-style: preserve-3d;
   transform-origin: right;
-  // transition: all 1s;
   transition: transform 1s;
   perspective: 2000px;
 
@@ -392,48 +135,12 @@ h1 {
   }
 
   &.flipped .card-front {
-    // transform: rotateY(180deg) translateX(-100%);
     transform: rotateY(180deg);
-    // transform-origin: center;
     backface-visibility: hidden;
   }
   &.flipped .card-back {
     transform: rotateY(360deg);
-    // transform-origin: left;
   }
-  // &.flipped > .card-back {
-  //   transform: rotateY(360deg);
-  //   // transform-origin: left;
-  // }
-
-  // &__front,
-  // &__back {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   backface-visibility: hidden;
-  //   border-radius: inherit;
-  // }
-
-  // &__front {
-  //   width: 100%;
-  //   height: 100%;
-  //   background-color: crimson;
-  //   background: no-repeat center;
-  //   background-size: cover;
-  //   background-image: url("./assets/fairytale/fairytales3-witch.png");
-  // }
-  // &__back {
-  //   // display: none;
-  //   background-color: darkblue;
-  //   background-image: url("./assets/3.png");
-  //   background-position: center;
-  //   background-size: contain;
-  //   transform-style: preserve-3d;
-  //   transform: rotateY(180deg);
-  // }
 }
 .hidden {
   visibility: hidden;
@@ -486,10 +193,6 @@ h1 {
   }
 }
 
-// .info {
-//   border-top: 1px solid #c3c9c9;
-// }
-
 .info-block {
   border-top: 1px solid #c3c9c9;
   padding-top: 10px;
@@ -509,43 +212,6 @@ h1 {
   text-transform: uppercase;
   font-size: 1rem;
 }
-// .start-button-wrapper {
-//   margin: 0 auto;
-//   width: 70%;
-//   display: flex;
-//   justify-content: center;
-// }
-// .start-button {
-//   width: 4.5rem;
-//   height: 4.5rem;
-//   border-radius: 190px;
-//   border: 3px solid #f33346;
-//   background-color: #ffd747;
-//   font-size: 1rem;
-//   text-transform: uppercase;
-//   text-align: center;
-//   line-height: 4.5rem;
-//   color: #f33346;
-//   font-weight: 700;
-//   transition: transform ease-in-out 0.3s;
-//   &:hover {
-//     transform: rotate(360deg) scale(1.2);
-//   }
-// }
-// .start-button-repeat {
-//   background-color: #ffd747;
-//   background-image: url("./assets/icons/reset40.png");
-//   background-repeat: no-repeat;
-//   background-position: center;
-// transition: transform ease-in-out 0.3s;
-// &:hover {
-//   transform: rotate(360deg) scale(1.2);
-// }
-// }
-
-// .none {
-//   display: none;
-// }
 
 .res {
   margin: 0 auto;
@@ -564,19 +230,19 @@ h1 {
   background-size: cover;
 }
 
-// .loss {
-//   background: url("./assets/res/coala-no.svg") no-repeat center;
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: cover;
-// }
-// .win {
-//   background: url(" ./assets/res/coala-good-job.svg") no-repeat center;
-//   background-size: cover;
-// }
+@media screen and (max-width: 640px) {
+  .res {
+    width: 400px;
+    height: 400px;
+  }
+}
 
 @media screen and (max-width: 420px) {
   html {
     font-size: 14px;
+  }
+  .res {
+    width: 300px;
+    height: 300px;
   }
 }

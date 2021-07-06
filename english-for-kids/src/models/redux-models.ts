@@ -1,8 +1,16 @@
 export interface Action {
   type: string,
-  payload?: string | object | boolean
+  payload?: string | boolean
 }
 
+export interface ActionCreaterReturn {
+  type: string
+}
+
+export interface ActionCreaterReturnPayload {
+  type: string,
+  payload: string | boolean
+}
 
 export interface InitState {
   showMenu: boolean
@@ -24,16 +32,5 @@ export interface PlayMode {
 }
 
 export interface GameSet {
-  gameState: boolean,
-
+  gameState: boolean
 }
-
-// export interface GameState {
-//   gameState: boolean
-// }
-// export interface MistakesCounter {
-//   mistakesCounter: number
-// }
-// export interface CorrectAnswerCounter {
-//   correctAnswerCounter: number
-// }
