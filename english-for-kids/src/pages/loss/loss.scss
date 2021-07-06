@@ -1,10 +1,4 @@
-.win {
-  position: relative;
-  background: url(" ./../../assets/res/coala-good-job.svg") no-repeat center;
-  background-size: cover;
-  z-index: 1000;
-}
-.win-text {
+.loss-text {
   position: absolute;
   top: 50%;
   text-transform: uppercase;
@@ -12,7 +6,12 @@
   font-weight: 700;
   color: #f33346;
 }
-.win-text {
+.loss {
+  background: url("./../../assets/res/coala-no.svg") no-repeat center;
+  background-size: cover;
+}
+
+.loss-text {
   position: absolute;
   top: 80%;
   text-transform: uppercase;

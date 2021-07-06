@@ -1,4 +1,4 @@
-import { CHOOSE_CATEGORY, PLAY_MODE, SHOW_MENU, TRAIN_MODE, MISTAKES_INCREMENT, START_GAME, ACTIVE_CATEGORY, END_GAME, CORRECT_INCREMENT } from "./actionTypes"
+import { CHOOSE_CATEGORY, PLAY_MODE, SHOW_MENU, TRAIN_MODE, MISTAKES_INCREMENT, START_GAME, ACTIVE_CATEGORY, END_GAME, CORRECT_INCREMENT, RESET_COUNTER } from "./actionTypes"
 
 export function showMenu(show: boolean) {
   return {
@@ -51,5 +51,10 @@ export function correctCounterIncrement() {
 export function mistakesCounterIncrement() {
   return {
     type: MISTAKES_INCREMENT
+  }
+}
+export function resetCounter() {
+  return {
+    type: RESET_COUNTER
   }
 }

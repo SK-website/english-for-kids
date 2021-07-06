@@ -3,7 +3,6 @@ import './../../styles.scss';
 
 
 import { BaseComponent } from "../../components/base-component";
-
 export class WinPage extends BaseComponent {
 
 
@@ -11,10 +10,12 @@ export class WinPage extends BaseComponent {
     super('div', ['res']);
     const winText = new BaseComponent('div', ['win-text']);
     winText.element.textContent = 'Congratulations! You won this category!'
-    const winImg = new BaseComponent('div', ['res-img', 'win'])
+    const winImg = new BaseComponent('div', ['img-res', 'win'])
 
     this.element.appendChild(winText.element);
-    this.element.appendChild(winImg.element)
+    this.element.appendChild(winImg.element);
+
+
 
   }
 }

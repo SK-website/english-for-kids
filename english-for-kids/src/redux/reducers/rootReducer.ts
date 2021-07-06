@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { Action } from '../../models/redux-models';
 import { correctCounterIncrement } from '../actionsCreators';
-import { ACTIVE_CATEGORY, CHOOSE_CATEGORY, CORRECT_INCREMENT, END_GAME, MISTAKES_INCREMENT, PLAY_MODE, SHOW_MENU, START_GAME, TRAIN_MODE } from '../actionTypes';
+import { ACTIVE_CATEGORY, CHOOSE_CATEGORY, CORRECT_INCREMENT, END_GAME, MISTAKES_INCREMENT, PLAY_MODE, RESET_COUNTER, SHOW_MENU, START_GAME, TRAIN_MODE } from '../actionTypes';
 import { initialCurrentCategoryState, initialGameSet, initialMenuState, initialModeState } from '../initialState';
 
 function showMenuReducer(state = initialMenuState, action: Action) {
@@ -48,6 +48,8 @@ function correctAnswerCounter(correctAnswerCounter = 0, action: Action) {
   switch (action.type) {
     case CORRECT_INCREMENT:
       return correctAnswerCounter + 1
+    case RESET_COUNTER:
+      return correctAnswerCounter = 0
     default: return correctAnswerCounter
   }
 }

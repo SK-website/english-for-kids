@@ -7,30 +7,29 @@ import { BaseComponent } from '../base-component';
 import { Card } from '../card/card';
 import { CardsField } from '../cards-field/cards-field';
 import { StartRepeatButton } from '../start-repeat-button/start-repeat-button';
-
-// const FLIP_DELAY = 3000;
+import { ResultHearts } from '../result-hearts/result-hearts';
 
 export class Game extends BaseComponent {
 
   public cardsField: CardsField;
   private allCardsAudio: string[];
   private readonly startRepeatButton: StartRepeatButton;
-
+  private hearts: ResultHearts;
 
   constructor() {
     super();
     this.allCardsAudio = [];
     this.startRepeatButton = new StartRepeatButton;
     this.cardsField = new CardsField();
+    this.hearts = new ResultHearts();
     this.element.appendChild(this.cardsField.element);
     this.element.appendChild(this.startRepeatButton.element);
-
+    this.element.insertAdjacentElement("afterbegin", this.hearts.container.element)
   }
 
   newGame(categoryData: ImageCategoryModel): void {
     let counter = 0;
     this.cardsField.clear();
-
     const cards = categoryData.info
       .map((cardInfo) => new Card(categoryData.category, cardInfo))
       .sort(() => Math.random() - 0.5);
@@ -50,10 +49,12 @@ export class Game extends BaseComponent {
           counter++;
           this.playCorrectNote();
           card.cardImg.element.classList.add('inactive');
+          this.hearts.addYellowHeart();
           store.dispatch(correctCounterIncrement());
           this.playNextAudio(counter);
         } else {
           this.playIncorrectNote();
+          this.hearts.addGreyHeart();
           store.dispatch(mistakesCounterIncrement());
         }
         if (counter === 8) return
@@ -72,7 +73,6 @@ export class Game extends BaseComponent {
 
     this.startRepeatButton.startButton.element.addEventListener('click', (): void => {
       this.playNextAudio(counter);
-
       this.startRepeatButton.startButton.element.classList.add('none');
       this.startRepeatButton.repeatButton.element.classList.remove('none');
       store.dispatch(setStartGame());
@@ -82,28 +82,21 @@ export class Game extends BaseComponent {
     });
   }
 
-
   playNextAudio(n: number) {
     console.log('next')
     Card.playNote(this.allCardsAudio[n]);
   }
 
-
   playCorrectNote() {
-    Card.playNote(`./audio/game/correct.mp3`);
+    Card.playNote(`./audio/game/correct1.mp3`);
   }
 
   playIncorrectNote() {
-    Card.playNote(`./audio/game/ops2.mp3`)
+    Card.playNote(`./audio/game/ops1.mp3`)
   }
-
   mixAudio() {
     console.log('before', this.allCardsAudio);
     this.allCardsAudio.sort(() => Math.random() - 0.3);
     console.log('after', this.allCardsAudio);
   }
-
-
 }
-
-
