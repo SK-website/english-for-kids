@@ -10,7 +10,7 @@ import { Train } from './components/train/train';
 
 import { CurrentCategory } from './models/redux-models';
 import {
-  chooseCategory, resetCounter, resetMistakeCounter, showMenu,
+  chooseCategory, resetCounter, resetMistakeCounter, resetModeFlag, showMenu,
 } from './redux/actionsCreators';
 import { WinPage } from './pages/win/win';
 import { Card } from './components/card/card';
@@ -52,6 +52,7 @@ export class App {
       const state = store.getState();
       const category: CurrentCategory = state.currentCategory;
       const { playMode } = state;
+      const { modeFlag } = state;
       if (category.currentCategory === 'categories') this.start();
       else if ((category.currentCategory !== '') && (playMode.playMode === false)) {
         this.startTrain(category.currentCategory);
@@ -59,12 +60,21 @@ export class App {
         this.startGame(category.currentCategory);
       }
 
+      if (modeFlag === true && category.activeCategory !== '') {
+        this.startGame(category.activeCategory);
+        store.dispatch(resetModeFlag());
+      }
+      if (modeFlag === false && category.activeCategory !== '') {
+        this.startTrain(category.activeCategory);
+        store.dispatch(resetModeFlag());
+      }
+
       if (state.correctAnswersCounter === 8 && state.mistakesCounter === 0) {
         if (this.mainElement) {
           this.mainElement.innerHTML = '';
           this.mainElement?.appendChild(this.winPage.element);
           Card.playNote('./audio/game/win_result1.mp3');
-          setTimeout(() => this.start(), 3000);
+          setTimeout(() => this.start(), 2500);
           store.dispatch(resetCounter());
         }
       }
@@ -74,7 +84,7 @@ export class App {
           const lossPage = new LossPage(state.mistakesCounter);
           this.mainElement?.appendChild(lossPage.element);
           Card.playNote('./audio/game/no-result1.mp3');
-          setTimeout(() => this.start(), 3000);
+          setTimeout(() => this.start(), 2500);
           store.dispatch(resetCounter());
           store.dispatch(resetMistakeCounter());
         }

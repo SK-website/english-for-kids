@@ -24,7 +24,8 @@ export interface State {
   showMenu: boolean;
   currentCategory: CurrentCategory,
   playMode: boolean,
-  activeCategory: string
+  activeCategory: string,
+  // modeFlag: boolean | null
 }
 
 export interface PlayMode {
@@ -33,4 +34,7 @@ export interface PlayMode {
 
 export interface GameSet {
   gameState: boolean
+}
+export interface ModeFlag {
+  state: boolean
 }

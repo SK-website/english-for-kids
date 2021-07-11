@@ -3,6 +3,7 @@ import { Action } from '../../models/redux-models';
 
 import {
   ACTIVE_CATEGORY, CHOOSE_CATEGORY, CORRECT_INCREMENT, END_GAME, MISTAKES_INCREMENT,
+  MODE_FLAG_RESET,
   PLAY_MODE, RESET_COUNTER, RESET_MISTAKE_COUNTER, SHOW_MENU, START_GAME, TRAIN_MODE,
 } from '../actionTypes';
 
@@ -38,6 +39,18 @@ function changeMode(state = initialModeState, action: Action) {
   }
 }
 
+function modeFlag(state = null, action: Action) {
+  switch (action.type) {
+    case PLAY_MODE:
+      return true;
+    case TRAIN_MODE:
+      return false;
+    case MODE_FLAG_RESET:
+      return null;
+    default: return state;
+  }
+}
+
 function setGame(state = initialGameSet, action: Action) {
   switch (action.type) {
     case START_GAME:
@@ -54,7 +67,7 @@ function correctAnswersCounter(correctAnswerCounter = 0, action: Action) {
     case CORRECT_INCREMENT:
       return correctAnswerCounter + 1;
     case RESET_COUNTER:
-      return correctAnswerCounter - 8;
+      return 0;
     default: return correctAnswerCounter;
   }
 }
@@ -64,7 +77,7 @@ function mistakesCounter(mistakeCounter = 0, action: Action) {
     case MISTAKES_INCREMENT:
       return mistakeCounter + 1;
     case RESET_MISTAKE_COUNTER:
-      return mistakeCounter - mistakeCounter;
+      return 0;
     default: return mistakeCounter;
   }
 }
@@ -76,4 +89,6 @@ export const rootReducer = combineReducers({
   gameSet: setGame,
   mistakesCounter,
   correctAnswersCounter,
+  modeFlag,
+
 });

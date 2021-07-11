@@ -2,7 +2,10 @@ import './navbar.scss';
 import { BaseComponent } from '../base-component';
 import { CategoryLink } from '../category-link/category-link';
 import store from '../../redux/store';
-import { chooseCategory, setActiveCategory, showMenu } from '../../redux/actionsCreators';
+import {
+  chooseCategory, resetCounter, resetMistakeCounter, setActiveCategory, showMenu,
+}
+  from '../../redux/actionsCreators';
 import { CurrentCategory } from '../../models/redux-models';
 
 export class Navbar {
@@ -57,8 +60,19 @@ export class Navbar {
       store.dispatch(showMenu(false));
       store.dispatch(setActiveCategory(el.linkCategory));
       store.dispatch(chooseCategory(el.linkCategory));
+      store.dispatch(resetCounter());
+      store.dispatch(resetMistakeCounter());
+      // store.dispatch(resetModeFlag());
+      //   const state = store.getState();
+      //   const { playMode } = state;
+      //   if (playMode.playMode === true) {
+      //     store.dispatch(toPlayMode());
+      //   }
+      //   if (playMode.playMode === false) {
+      //     store.dispatch(toTrainMode());
+      //   }
+      //
     }));
-
     store.subscribe(() => {
       const state = store.getState();
 

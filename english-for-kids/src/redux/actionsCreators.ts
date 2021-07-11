@@ -1,7 +1,8 @@
+import { Action } from 'redux';
 import { ActionCreaterReturn, ActionCreaterReturnPayload } from '../models/redux-models';
 import {
   CHOOSE_CATEGORY, PLAY_MODE, SHOW_MENU, TRAIN_MODE, MISTAKES_INCREMENT, START_GAME,
-  ACTIVE_CATEGORY, END_GAME, CORRECT_INCREMENT, RESET_COUNTER, RESET_MISTAKE_COUNTER,
+  ACTIVE_CATEGORY, END_GAME, CORRECT_INCREMENT, RESET_COUNTER, RESET_MISTAKE_COUNTER, MODE_FLAG_RESET,
 } from './actionTypes';
 
 export function showMenu(show: boolean): ActionCreaterReturnPayload {
@@ -66,5 +67,11 @@ export function resetCounter(): ActionCreaterReturn {
 export function resetMistakeCounter(): ActionCreaterReturn {
   return {
     type: RESET_MISTAKE_COUNTER,
+  };
+}
+
+export function resetModeFlag(): Action {
+  return {
+    type: MODE_FLAG_RESET,
   };
 }
