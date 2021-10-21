@@ -8,4 +8,5 @@ Link to the task description https://github.com/rolling-scopes-school/tasks/blob
 
 Used techologies: **TypeScript, Redux, HTML, CSS, SCSS, Webpack, ESLint**
 
-
+Screenshot:
+![image](https://user-images.githubusercontent.com/64695869/124685868-c5efdc80-deda-11eb-8530-70e82412e411.png)
