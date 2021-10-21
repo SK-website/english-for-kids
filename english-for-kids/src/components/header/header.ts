@@ -55,7 +55,6 @@ export class Header extends BaseComponent {
 
     this.menu.element.addEventListener('click', () => {
       const newPosition = !this.navbar.element.classList.contains('navbar-show');
-
       store.dispatch(showMenu(newPosition));
     });
 
@@ -77,7 +76,6 @@ export class Header extends BaseComponent {
     store.subscribe(() => {
       const state = store.getState();
       const show: InitState = state.showMenu;
-
       if (show.showMenu) {
         this.navbar.element.classList.add('navbar-show');
       } else {

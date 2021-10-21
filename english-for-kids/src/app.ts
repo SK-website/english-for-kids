@@ -3,12 +3,10 @@ import { Header } from './components/header/header';
 import { Navbar } from './components/navbar/navbar';
 import { MainPage } from './pages/main';
 import { Game } from './components/game/game';
-
 import { getCategoriesCardsInfo } from './api/api';
 import store from './redux/store';
 import { Train } from './components/train/train';
-
-import { CurrentCategory } from './models/redux-models';
+import { CurrentCategory, InitState } from './models/redux-models';
 import {
   chooseCategory, resetCounter, resetMistakeCounter, resetModeFlag, showMenu,
 } from './redux/actionsCreators';
@@ -20,6 +18,8 @@ export class App {
   private mainElement: HTMLElement | null;
 
   private header: Header;
+
+  private cover: HTMLElement;
 
   private mainPage: MainPage;
 
@@ -41,9 +41,12 @@ export class App {
     this.mainElement = document.getElementById('main');
     this.mainElement?.insertAdjacentElement('beforebegin', this.navbar.element);
     this.mainElement?.insertAdjacentElement('beforebegin', this.header.element);
+    this.cover = document.createElement('div');
+    this.cover.classList.add('invisiable', 'hidden');
+    this.header.element.insertAdjacentElement('beforebegin', this.cover);
 
-    document.addEventListener('mouseup', () => {
-      if (this.header.navbar.element.classList.contains('navbar-show')) {
+    this.cover.addEventListener('mouseup', () => {
+      if (!(this.cover.classList.contains('hidden'))) {
         store.dispatch(showMenu(false));
       }
     });
@@ -53,6 +56,7 @@ export class App {
       const category: CurrentCategory = state.currentCategory;
       const { playMode } = state;
       const { modeFlag } = state;
+      const show: InitState = state.showMenu;
       if (category.currentCategory === 'categories') this.start();
       else if ((category.currentCategory !== '') && (playMode.playMode === false)) {
         this.startTrain(category.currentCategory);
@@ -63,10 +67,14 @@ export class App {
       if (modeFlag === true && category.activeCategory !== '') {
         this.startGame(category.activeCategory);
         store.dispatch(resetModeFlag());
+        store.dispatch(resetCounter());
+        store.dispatch(resetMistakeCounter());
       }
       if (modeFlag === false && category.activeCategory !== '') {
         this.startTrain(category.activeCategory);
         store.dispatch(resetModeFlag());
+        store.dispatch(resetCounter());
+        store.dispatch(resetMistakeCounter());
       }
 
       if (state.correctAnswersCounter === 8 && state.mistakesCounter === 0) {
@@ -74,7 +82,7 @@ export class App {
           this.mainElement.innerHTML = '';
           this.mainElement?.appendChild(this.winPage.element);
           Card.playNote('./audio/game/win_result1.mp3');
-          setTimeout(() => this.start(), 2500);
+          setTimeout(() => this.start(), 6000);
           store.dispatch(resetCounter());
         }
       }
@@ -84,15 +92,23 @@ export class App {
           const lossPage = new LossPage(state.mistakesCounter);
           this.mainElement?.appendChild(lossPage.element);
           Card.playNote('./audio/game/no-result1.mp3');
-          setTimeout(() => this.start(), 2500);
+          setTimeout(() => this.start(), 6000);
           store.dispatch(resetCounter());
           store.dispatch(resetMistakeCounter());
         }
+      }
+      if (show.showMenu) {
+        this.navbar.element.classList.add('navbar-show');
+        this.cover.classList.remove('hidden');
+      } else {
+        this.navbar.element.classList.remove('navbar-show');
+        this.cover.classList.add('hidden');
       }
     });
   }
 
   start(): void {
+    this.header.element.classList.remove('hidden');
     if (this.mainElement) {
       this.mainElement.innerHTML = '';
       this.mainElement.appendChild(this.mainPage.element);
@@ -114,12 +130,10 @@ export class App {
     if (this.mainElement) {
       this.mainElement.innerHTML = '';
       const startNewGame = new Game();
-      // this.mainElement.appendChild(this.game.element);
       this.mainElement.appendChild(startNewGame.element);
       const categories = await getCategoriesCardsInfo();
       const cat = categories.find((el) => el.category === category);
       if (cat) startNewGame.newGame(cat);
-      // if (cat) this.game.newGame(cat);
       store.dispatch(chooseCategory(''));
     }
   }

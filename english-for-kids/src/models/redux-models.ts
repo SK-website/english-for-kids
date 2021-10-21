@@ -25,7 +25,6 @@ export interface State {
   currentCategory: CurrentCategory,
   playMode: boolean,
   activeCategory: string,
-  // modeFlag: boolean | null
 }
 
 export interface PlayMode {

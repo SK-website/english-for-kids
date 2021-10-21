@@ -1,19 +1,12 @@
-.loss-text {
-  position: absolute;
-  top: 50%;
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #f33346;
-}
 .loss {
   background: url("./../../assets/res/coala-no.svg") no-repeat center;
   background-size: cover;
+  z-index: 10;
 }
 
 .loss-text {
-  position: absolute;
-  top: 80%;
+  margin-bottom: 2rem;
+  text-align: center;
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 700;
@@ -22,14 +15,12 @@
 
 @media screen and (max-width: 740px) {
   .loss-text {
-    top: 50%;
     font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 420px) {
   .loss-text {
-    top: 40%;
     font-size: 1.3rem;
   }
 }

@@ -1,13 +1,12 @@
 .win {
-  position: relative;
   background: url(" ./../../assets/res/coala-good-job.svg") no-repeat center;
   background-size: cover;
   z-index: 1000;
 }
 
 .win-text {
-  position: absolute;
-  top: 80%;
+  margin-bottom: 2rem;
+  text-align: center;
   text-transform: uppercase;
   font-size: 2rem;
   font-weight: 700;
@@ -15,14 +14,12 @@
 }
 @media screen and (max-width: 740px) {
   .win-text {
-    top: 50%;
     font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 420px) {
   .win-text {
-    top: 40%;
     font-size: 1.3rem;
   }
 }

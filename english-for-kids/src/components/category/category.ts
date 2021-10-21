@@ -1,5 +1,4 @@
 import './category.scss';
-import '../../styles.scss';
 import { BaseComponent } from '../base-component';
 import store from '../../redux/store';
 import { chooseCategory, setActiveCategory, showMenu } from '../../redux/actionsCreators';

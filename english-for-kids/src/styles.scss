@@ -42,8 +42,8 @@ img {
 }
 
 body {
-  min-height: 100vh;
-  padding: 1.5rem 1.5rem 2.5rem 1.8rem;
+  min-height: 94vh;
+  padding: 1rem 1.5rem 1.5rem 1.8rem;
   font-family: Quicksand, sans-serif;
   color: #f33346;
   background: url("./assets/paper-flower-background-4794429_1920.jpg");
@@ -76,13 +76,20 @@ h1 {
 
 .right-img-result {
   background: url("./assets/icons/heart-yel26.png");
-  width: 26px;
-  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
 }
 .wrong-img-result {
   background: url("./assets/icons/heart-white26.png");
-  width: 26px;
-  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+}
+.start-container {
+  margin: 0 auto;
+  width: 75%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .cards-field {
@@ -97,7 +104,7 @@ h1 {
 }
 .card-container {
   margin: 1%;
-  flex: 1 0 20%;
+  flex: 1 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -110,8 +117,8 @@ h1 {
 }
 .card {
   position: relative;
-  width: 18rem;
-  height: 18rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.1rem 0.25rem black;
   transform-style: preserve-3d;
@@ -180,17 +187,6 @@ h1 {
   background: url("./assets/icons/arrow-green.png") no-repeat;
   cursor: pointer;
   transition: transform (ease-in-out) 0.4s;
-  &:hover {
-    transform: rotate(360deg);
-  }
-  &:active > .card {
-    transform: rotateY(180deg) translateX(-100%);
-    transform-origin: left;
-  }
-  &:active + .card {
-    transform: rotateY(180deg) translateX(-100%);
-    transform-origin: left;
-  }
 }
 
 .info-block {
@@ -215,8 +211,8 @@ h1 {
 
 .res {
   margin: 0 auto;
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,6 +224,30 @@ h1 {
   width: 80%;
   height: 80%;
   background-size: cover;
+}
+.result-page-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  background: url("./assets/paper-flower-background-4794429_1920.jpg");
+}
+
+.static {
+  pointer-events: none;
+}
+
+.invisiable {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 98vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
 
 @media screen and (max-width: 740px) {

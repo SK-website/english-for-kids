@@ -62,16 +62,6 @@ export class Navbar {
       store.dispatch(chooseCategory(el.linkCategory));
       store.dispatch(resetCounter());
       store.dispatch(resetMistakeCounter());
-      // store.dispatch(resetModeFlag());
-      //   const state = store.getState();
-      //   const { playMode } = state;
-      //   if (playMode.playMode === true) {
-      //     store.dispatch(toPlayMode());
-      //   }
-      //   if (playMode.playMode === false) {
-      //     store.dispatch(toTrainMode());
-      //   }
-      //
     }));
     store.subscribe(() => {
       const state = store.getState();

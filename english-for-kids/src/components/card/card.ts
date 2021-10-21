@@ -1,10 +1,6 @@
 import { CardInfo } from '../../models/image-category-model';
 import store from '../../redux/store';
-import '../../styles.scss';
-
 import { BaseComponent } from '../base-component';
-
-// const FLIP_CLASS = 'flipped';
 
 export class Card extends BaseComponent {
   public flippButton: BaseComponent;

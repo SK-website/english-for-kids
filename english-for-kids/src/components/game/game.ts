@@ -1,4 +1,3 @@
-import '../../styles.scss';
 import store from '../../redux/store';
 import { ImageCategoryModel } from '../../models/image-category-model';
 import { correctCounterIncrement, mistakesCounterIncrement, setStartGame } from '../../redux/actionsCreators';
@@ -23,9 +22,11 @@ export class Game extends BaseComponent {
     this.startRepeatButton = new StartRepeatButton();
     this.cardsField = new CardsField();
     this.hearts = new ResultHearts();
+    const container = new BaseComponent('div', ['start-container']);
+    container.element.appendChild(this.startRepeatButton.element);
+    container.element.appendChild(this.hearts.container.element);
     this.element.appendChild(this.cardsField.element);
-    this.element.appendChild(this.startRepeatButton.element);
-    this.element.insertAdjacentElement('afterbegin', this.hearts.container.element);
+    this.element.insertAdjacentElement('afterbegin', container.element);
   }
 
   async newGame(categoryData: ImageCategoryModel): Promise<void> {
@@ -51,7 +52,6 @@ export class Game extends BaseComponent {
           counter++;
           Game.playCorrectNote();
           card.cardImg.element.classList.add('inactive');
-          // card.element.classList.add('inactive');
           this.hearts.addYellowHeart();
           store.dispatch(correctCounterIncrement());
           setTimeout(() => this.playNextAudio(counter), 1000);
